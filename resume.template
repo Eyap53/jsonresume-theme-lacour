@@ -180,7 +180,10 @@
             <ul id="education" class="clearfix">
               {{#education}}
               <li>
-                <div class="year pull-left">{{endDateYear}} {{startDateYear}}</div>
+                <div class="year pull-left">
+				{{endDateYear}}<br>
+				{{startDateYear}}
+				</div>
                 <div class="description pull-right">
                   <h3>{{institution}}</h3>
                   {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}

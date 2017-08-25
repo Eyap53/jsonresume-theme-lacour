@@ -115,7 +115,7 @@ function render(resumeObject) {
                 w.endDateYear = (w.endDate || "").substr(0,4);
                 w.endDateMonth = getMonth(w.endDate || "");
             } else {
-                w.endDateYear = 'Present'
+                w.endDateYear = "Aujourd'hui";
             }
             if (w.highlights) {
                 if (w.highlights[0]) {
@@ -139,7 +139,7 @@ function render(resumeObject) {
                 w.endDateYear = (w.endDate || "").substr(0,4);
                 w.endDateMonth = getMonth(w.endDate || "");
             } else {
-                w.endDateYear = "Present";
+                w.endDateYear = "Aujourd'hui";
             }
             if (w.highlights) {
                 if (w.highlights[0]) {
@@ -161,18 +161,18 @@ function render(resumeObject) {
                   e.educationDetail = e.area + ", "+ e.studyType;
                 }
                 if (e.startDate) {
-                    e.startDateYear = e.startDate.substr(0,4);
-                    e.startDateMonth = getMonth(e.startDate || "");
+                    e.startDateYear = e.startDate.substr(0,4).trim();
+                    e.startDateMonth = getMonth(e.startDate || "").trim();
                 }
                 if (e.endDate) {
-                    e.endDateYear = e.endDate.substr(0,4);
-                    e.endDateMonth = getMonth(e.endDate || "");
+                    e.endDateYear = e.endDate.substr(0,4).trim();
+                    e.endDateMonth = getMonth(e.endDate || "").trim();
 
                     if (e.endDateYear > curyear) {
-                        e.endDateYear += " (expected)";
+                        e.endDateYear += " (prévu)";
                     }
                 } else {
-                    e.endDateYear = "Present";
+                    e.endDateYear = "Aujourd'hui";
                     e.endDateMonth = "";
                 }
                 if (e.courses) {
@@ -234,7 +234,7 @@ function render(resumeObject) {
 
     resumeObject.css = fs.readFileSync(__dirname + "/style.css", "utf-8");
     resumeObject.printcss = fs.readFileSync(__dirname + "/print.css", "utf-8");
-    var theme = fs.readFileSync(__dirname + '/resume.template', 'utf8');
+    var theme = fs.readFileSync(__dirname + "/resume.template", "utf8");
     var resumeHTML = Mustache.render(theme, resumeObject);
 
 
