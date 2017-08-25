@@ -139,7 +139,7 @@ function render(resumeObject) {
                 w.endDateYear = (w.endDate || "").substr(0,4);
                 w.endDateMonth = getMonth(w.endDate || "");
             } else {
-                w.endDateYear = 'Present'
+                w.endDateYear = "Present";
             }
             if (w.highlights) {
                 if (w.highlights[0]) {
@@ -163,19 +163,17 @@ function render(resumeObject) {
                 if (e.startDate) {
                     e.startDateYear = e.startDate.substr(0,4);
                     e.startDateMonth = getMonth(e.startDate || "");
-                } else {
-                    e.endDateMonth = "";
                 }
                 if (e.endDate) {
                     e.endDateYear = e.endDate.substr(0,4);
-                    e.endDateMonth = getMonth(e.endDate || "")
+                    e.endDateMonth = getMonth(e.endDate || "");
 
                     if (e.endDateYear > curyear) {
                         e.endDateYear += " (expected)";
                     }
                 } else {
-                    e.endDateYear = 'Present'
-                    e.endDateMonth = '';
+                    e.endDateYear = "Present";
+                    e.endDateMonth = "";
                 }
                 if (e.courses) {
                     if (e.courses[0]) {

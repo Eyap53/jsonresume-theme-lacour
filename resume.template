@@ -135,8 +135,9 @@
           </div>
           {{/volunteerBool}}
         </div>
-		<!-- CONTACT -->
+		
         <div class="col-xs-12 col-sm-5">
+			<!-- CONTACT -->
           <div class="box clearfix">
             <h2><i class="fa fa-bullseye ico"></i> Contact</h2>
             {{#basics.location}}
@@ -179,7 +180,7 @@
             <ul id="education" class="clearfix">
               {{#education}}
               <li>
-                <div class="year pull-left">{{startDateYear}} {{endDateYear}}</div>
+                <div class="year pull-left">{{endDateYear}} {{startDateYear}}</div>
                 <div class="description pull-right">
                   <h3>{{institution}}</h3>
                   {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
