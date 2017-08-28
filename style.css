@@ -121,8 +121,8 @@ blockquote {
   display: inline-block;
   text-align: center;
 }
-#awards .description,
-#education .description{
+#awards .infos,
+#education .infos{
   width: 80%;
   display: inline-block;
   background: #eee;
@@ -132,8 +132,8 @@ blockquote {
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-#awards .description:after,
-#education .description:after {
+#awards .infos:after,
+#education .infos:after {
   content: '';
   position: absolute;
   top: 15px;
@@ -146,15 +146,15 @@ blockquote {
   border-width: 8px;
   pointer-events: none;
 }
-#awards .description h3,
-#education .description h3{
+#awards .infos h3,
+#education .infos h3{
   font-size: 1.2em;
   margin: 0;
   padding: 0;
   font-weight: 700;
 }
-#awards .description p,
-#education .description p{
+#awards .infos p,
+#education .infos p{
   margin-top: 5px;
   padding: 0;
 }
@@ -164,6 +164,7 @@ blockquote {
 }
 .job .details {
   margin-left: 3%;
+  margin-right: 3%;
   width: 95%;
   padding: 10px;
   margin-bottom: 10px;
@@ -175,6 +176,10 @@ blockquote {
   font-size: 1.2em;
   font-weight: bold;
 }
+.job .description{
+  font-size: 0.8em;
+  font-style: italic;
+}
 .job .year{
   opacity: 0.7;
 }
@@ -182,7 +187,7 @@ blockquote {
   font-size: 1.2em;
   font-weight: bold;
 }
-.job .description{
+.job .infos{
   line-height: 1.5em;
 }
 .job .highlights{
@@ -191,6 +196,7 @@ blockquote {
 }
 .job .job-details {
   padding-left: 5%;
+  padding-right: 5%;
   width: 100%;
 }
 .publication {
@@ -219,9 +225,6 @@ blockquote {
   color: #32475c;
   background: #eee;
 }
-.contact-item:last-child .icon{
-  border-bottom: none;
-}
 .contact-item .title{
   width: 80%;
   width: calc(100% - 55px);
@@ -231,11 +234,18 @@ blockquote {
 .contact-item .title.only{
   margin-top: 10px;
 }
-.contact-item .description{
+.contact-item .infos{
   width: 80%;
   width: calc(100% - 55px);
   color: #334960;
 }
+
+.profiles{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
 
 .item-interests,
 .item-skills{
