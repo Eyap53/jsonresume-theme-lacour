@@ -121,11 +121,35 @@ function render(resumeObject) {
                 if (w.highlights[0]) {
                     if (w.highlights[0] != "") {
                         w.boolHighlights = true;
-                    }
-                }
-            }
+                    };
+                };
+            };
         });
-    }
+    };
+	
+	if (resumeObject.projects && resumeObject.projects.length) {
+        resumeObject.projectsBool = true;
+        _.each(resumeObject.projects, function(p){
+            if (p.startDate) {
+                p.startDateYear = (p.startDate || "").substr(0,4);
+                p.startDateMonth = getMonth(p.startDate || "");
+
+            }
+            if(p.endDate) {
+                p.endDateYear = (p.endDate || "").substr(0,4);
+                p.endDateMonth = getMonth(p.endDate || "");
+            } else {
+                p.endDateYear = "Aujourd'hui";
+            }
+            if (p.highlights) {
+                if (p.highlights[0]) {
+                    if (p.highlights[0] != "") {
+                        p.boolHighlights = true;
+                    };
+                };
+            };
+        });
+    };
 
     if (resumeObject.volunteer && resumeObject.volunteer.length) {
         resumeObject.volunteerBool = true;
