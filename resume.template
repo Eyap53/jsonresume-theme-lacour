@@ -79,6 +79,43 @@
             {{/work}}
           </div>
           {{/workBool}}
+		  {{#projectsBool}}
+          <!-- PROJECTS EXPERIENCE -->
+          <div class="box">
+            <h2><i class= "fa fa-suitcase ico"></i> Projets Personnel :</h2>
+            {{#projects}}
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">{{company}}</div>
+                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">{{position}}</div>
+                    <div class="description">
+                      {{{summary}}}
+					 <div class="col-sm-offset-1 col-sm-12 clearfix">
+						{{#keywords}}
+							<span class= "interest badge">{{{.}}}</span>
+						{{/keywords}}
+					</div>
+                      {{#boolHighlights}}
+                      <div class="highlights">Points clé</div>
+                      <ul class="list-group">
+                        {{#highlights}}
+                        <li class="list-group-item">{{{.}}}</li>
+                        {{/highlights}}
+                      </ul>
+                      {{/boolHighlights}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/projects}}
+          </div>
+          {{/projectsBool}}
           {{#awardsBool}}
           <!-- AWARDS -->
           <div class="box">
