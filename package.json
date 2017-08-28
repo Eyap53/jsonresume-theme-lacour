@@ -1,7 +1,7 @@
 {
-  "name": "jsonresume-theme-kendall-fr",
+  "name": "jsonresume-theme-bluewhale-fr",
   "version": "0.2.0",
-  "description": "A JSON Resume theme built with bootstrap, translated to french",
+  "description": "A JSON Resume theme built with bootstrap, in french",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,17 +19,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Eyap53/jsonresume-theme-kendall-fr.git"
+    "url": "https://github.com/Eyap53/jsonresume-theme-bluewhale-fr.git"
   },
   "keywords": [
     "json",
     "jsonresume",
     "theme",
-    "kendall",
+    "blue",
     "fr"
   ],
   "bugs": {
-    "url": "https://github.com/Eyap53/jsonresume-theme-kendall-fr/issues"
+    "url": "https://github.com/Eyap53/jsonresume-theme-bluewhale-fr/issues"
   },
-  "homepage": "https://github.com/Eyap53/jsonresume-theme-kendall-fr"
+  "homepage": "https://github.com/Eyap53/jsonresume-theme-bluewhale-fr"
 }
