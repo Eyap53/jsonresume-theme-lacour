@@ -48,60 +48,57 @@ function render(resumeObject) {
     if (resumeObject.basics.image || resumeObject.basics.gravatar) {
         resumeObject.photo = resumeObject.basics.image ? resumeObject.basics.image : resumeObject.basics.gravatar;
     }
-
-    _.each(resumeObject.basics.profiles, function(p){
-        switch(p.network.toLowerCase()) {
-            // special cases
-            case "google-plus":
-            case "googleplus":
-                p.iconClass = "fa fa-google-plus";
-                break;
-            case "flickr":
-            case "flicker":
-                p.iconClass = "fa fa-flickr";
-                break;
-            case "dribbble":
-            case "dribble":
-                p.iconClass = "fa fa-dribbble";
-                break;
-            case "codepen":
-                p.iconClass = "fa fa-codepen";
-                break;
-            case "soundcloud":
-                p.iconClass = "fa fa-soundcloud";
-                break;
-            case "reddit":
-                p.iconClass = "fa fa-reddit";
-                break;
-            case "tumblr":
-            case "tumbler":
-                p.iconClass = "fa fa-tumblr";
-                break;
-            case "stack-overflow":
-            case "stackoverflow":
-                p.iconClass = "fa fa-stack-overflow";
-                break;
-            case "blog":
-            case "rss":
-                p.iconClass = "fa fa-rss";
-                break;
-            case "gitlab":
-                p.iconClass = "fa fa-gitlab";
-                break;
-            case "keybase":
-                p.iconClass = "fa fa-key";
-                break;
-            default:
-                // try to automatically select the icon based on the name
-                p.iconClass = "fa fa-" + p.network.toLowerCase();
-        }
-
-        if (p.url) {
-            p.text = p.url;
-        } else {
-            p.text = p.network + ": " + p.username;
-        }
-    });
+	
+    if (resumeObject.basics.profiles && resumeObject.basics.profiles.length) {
+        resumeObject.profilesBool = true;
+		_.each(resumeObject.basics.profiles, function(p){
+			switch(p.network.toLowerCase()) {
+				// special cases
+				case "google-plus":
+				case "googleplus":
+					p.iconClass = "fa fa-google-plus";
+					break;
+				case "flickr":
+				case "flicker":
+					p.iconClass = "fa fa-flickr";
+					break;
+				case "dribbble":
+				case "dribble":
+					p.iconClass = "fa fa-dribbble";
+					break;
+				case "codepen":
+					p.iconClass = "fa fa-codepen";
+					break;
+				case "soundcloud":
+					p.iconClass = "fa fa-soundcloud";
+					break;
+				case "reddit":
+					p.iconClass = "fa fa-reddit";
+					break;
+				case "tumblr":
+				case "tumbler":
+					p.iconClass = "fa fa-tumblr";
+					break;
+				case "stack-overflow":
+				case "stackoverflow":
+					p.iconClass = "fa fa-stack-overflow";
+					break;
+				case "blog":
+				case "rss":
+					p.iconClass = "fa fa-rss";
+					break;
+				case "gitlab":
+					p.iconClass = "fa fa-gitlab";
+					break;
+				case "keybase":
+					p.iconClass = "fa fa-key";
+					break;
+				default:
+					// try to automatically select the icon based on the name
+					p.iconClass = "fa fa-" + p.network.toLowerCase();
+			};
+		});
+	};
 
     if (resumeObject.work && resumeObject.work.length) {
         resumeObject.workBool = true;

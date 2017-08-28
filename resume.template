@@ -50,7 +50,7 @@
               <div class="job clearfix">
                 <div class="row">
                   <div class="details">
-                    <div class="where">{{company}}</div>
+                    <span class="where">{{name}}</span> - <span class="description">{{description}}</span>
                     {{#website}}
                     <div class="address">
                       <a href="{{website}}" target= "_blank"><i class="fa fa-globe ico"></i> {{website}}</a>
@@ -62,7 +62,7 @@
                 <div class="row">
                   <div class="job-details col-xs-11">
                     <div class="profession">{{position}}</div>
-                    <div class="description">
+                    <div class="infos">
                       {{{summary}}}
                       {{#boolHighlights}}
                       <div class="highlights">Points clé</div>
@@ -87,15 +87,14 @@
               <div class="job clearfix">
                 <div class="row">
                   <div class="details">
-                    <div class="where">{{company}}</div>
-                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
+                    <span class="where">{{name}}</span> : <span class="year description">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</span>
                   </div>
                 </div>
                 <div class="row">
                   <div class="job-details col-xs-11">
                     <div class="profession">{{position}}</div>
-                    <div class="description">
-                      {{{summary}}}
+                    <div class="infos">
+                      {{{description}}}
 					 <div class="col-sm-offset-1 col-sm-12 clearfix">
 						{{#keywords}}
 							<span class= "interest badge">{{{.}}}</span>
@@ -124,7 +123,7 @@
               {{#awards}}
               <li>
                 <div class="year pull-left">{{month}} {{year}}</div>
-                <div class="description pull-right">
+                <div class="infos pull-right">
                   <h3>{{awarder}}</h3>
                   <p><i class="fa fa-trophy ico"></i> {{title}}</p>
                   <p>{{{summary}}}</p>
@@ -154,7 +153,7 @@
                 <div class="row">
                   <div class="col-xs-11 pull-right">
                     <div class="profession">{{position}}</div>
-                    <div class="description">
+                    <div class="infos">
                       {{{summary}}}
                       {{#boolHighlights}}
                       <div class="highlights">Points clé</div>
@@ -202,13 +201,13 @@
               <div class="title only pull-right"><a href="{{basics.website}}" target="_blank">{{basics.website}}</a></div>
             </div>
             {{/basics.website}}
-            {{#basics.profiles}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
-              <div class="title pull-right">{{network}}</div>
-              <div class="description pull-right"><a href="{{url}}" target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{url}}{{/username}}</a></div>
-            </div>
-            {{/basics.profiles}}
+			{{#profilesBool}}
+				<div class="icon text-center">
+					{{#basics.profiles}}
+						<a class="{{iconClass}} fa-2x profiles" href="{{url}}"></a>
+					{{/basics.profiles}}
+				</div>
+			{{/profilesBool}}
           </div>
           {{#educationBool}}
           <!-- EDUCATION -->
@@ -221,7 +220,7 @@
 				{{endDateYear}}<br>
 				{{startDateYear}}
 				</div>
-                <div class="description pull-right">
+                <div class="infos pull-right">
                   <h3>{{institution}}</h3>
                   {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
                   <p>{{area}}</p>
