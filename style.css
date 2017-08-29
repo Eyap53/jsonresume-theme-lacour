@@ -159,6 +159,7 @@ blockquote {
   padding: 0;
 }
 
+
 .job{
   margin-bottom: 15px;
 }
@@ -189,6 +190,10 @@ blockquote {
 }
 .job .infos{
   line-height: 1.5em;
+}
+.job .badges{
+  padding-top: 12px;
+  padding-bottom: 2px;
 }
 .job .highlights{
   padding: 5px 0;

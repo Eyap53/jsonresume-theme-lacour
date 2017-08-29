@@ -95,7 +95,7 @@
                     <div class="profession">{{position}}</div>
                     <div class="infos">
                       {{{description}}}
-					 <div class="col-sm-offset-1 col-sm-12 clearfix">
+					 <div class="col-sm-offset-1 col-sm-12 clearfix badges">
 						{{#keywords}}
 							<span class= "interest badge">{{{.}}}</span>
 						{{/keywords}}
