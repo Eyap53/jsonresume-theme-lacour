@@ -193,7 +193,7 @@ function render(resumeObject) {
                         e.endDateYear += " (prévu)";
                     }
                 } else {
-                    e.endDateYear = "Aujourd'hui";
+                    e.endDateYear = "Auj.";
                     e.endDateMonth = "";
                 }
                 if (e.courses) {
