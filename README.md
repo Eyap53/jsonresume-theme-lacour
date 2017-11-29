@@ -1,10 +1,16 @@
-## Custom JSONResume theme based on kendall
+# Custom JSONResume theme based on kendall
 
 A theme for JSONResume, __in French__, that relies on Bootstrap and FontAwesome.
 
 ## Usage
 
-You can use [resume-cli](https://github.com/jsonresume/resume-cli) OR [HackMyResume](https://github.com/hacksalot/HackMyResume) to get your beautiful resume. 
+You can use [resume-cli](https://github.com/jsonresume/resume-cli) OR [HackMyResume](https://github.com/hacksalot/HackMyResume) to get your beautiful resume.
+
+### Exemple with HackMyResume :
+ * Get HackMyResume : [sudo] npm install hackmyresume -g
+ * Download the theme : git clone https://github.com/Eyap53/jsonresume-theme-bluewhale-fr.git
+ * Install dependencies : npm install
+ * Render your resume with something like : hackmyresume BUILD resume_fr.json TO out/resume.all --pdf none -t jsonresume-theme-bluewhale-fr
 
 ## Tips
 
