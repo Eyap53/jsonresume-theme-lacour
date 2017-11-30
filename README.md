@@ -51,8 +51,8 @@ If you find any other problems with this theme in specified, do feel free to lea
 
 ## Authors
 
-* **M. Adam Kendall** - *Initial work* - [LinuxBozo](https://github.com/LinuxBozo)
-* **Eyap53** - *Translation, modifications* - [Eyap53](https://github.com/Eyap53)
+* **Adam Kendall** - *Initial work* - [LinuxBozo](https://github.com/LinuxBozo)
+* **Mael Lacour** - *Translation, modifications* - [Eyap53](https://github.com/Eyap53)
 
 The initial work of Adam Kendall is under MIT license. See the [initial license](initial-license) file for details
 
