@@ -2,9 +2,14 @@
 
 A theme for JSONResume, __in French__, that relies on Bootstrap and FontAwesome.
 
+## Example
+
+You can get a resume wich look like this one :
+![Example of resume](media/example.png)
+
 ## Usage
 
-You can use [resume-cli](https://github.com/jsonresume/resume-cli) OR [HackMyResume](https://github.com/hacksalot/HackMyResume) to get your beautiful resume.
+You can use [resume-cli](https://github.com/jsonresume/resume-cli) OR [HackMyResume](https://github.com/hacksalot/HackMyResume) to obtain your resume.
 
 ### Exemple with HackMyResume :
  * Get HackMyResume : [sudo] npm install hackmyresume -g
