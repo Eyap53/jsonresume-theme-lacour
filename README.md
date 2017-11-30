@@ -15,7 +15,7 @@ You can use [resume-cli](https://github.com/jsonresume/resume-cli) OR [HackMyRes
  * Get HackMyResume : [sudo] npm install hackmyresume -g
  * Download the theme : git clone https://github.com/Eyap53/jsonresume-theme-bluewhale-fr.git
  * Install dependencies : npm install
- * Render your resume with something like : hackmyresume BUILD resume_fr.json TO out/resume.all --pdf none -t jsonresume-theme-bluewhale-fr
+ * Render your resume with something like : hackmyresume BUILD resume_fr.json TO out/resume.html -t jsonresume-theme-bluewhale-fr
 
 ## Tips
 
