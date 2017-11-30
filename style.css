@@ -290,3 +290,7 @@ blockquote {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
+
+.address {
+  font-size: .85em;
+}
