@@ -59,7 +59,7 @@ blockquote {
 #text-header h1 sup{
   opacity: 0.5;
 }
-#text-header:after{
+#header:after{
   width: 100%;
   height: 3px;
   border-bottom: 1px solid #ddd;
@@ -68,10 +68,10 @@ blockquote {
   display: block;
 }
 
-.box{
+/*.box{
   padding-bottom: 10px;
-  margin-bottom: 25px;
-}
+  margin-bottom: 10px;
+}*/
 .box h2{
   color: #227c74;
   font-size: 1.5em;
@@ -81,7 +81,7 @@ blockquote {
 
 #awards,
 #education{
-  margin-top: 20px;
+  margin-top: 2px;
   margin-bottom: 0;
   position: relative;
   padding: 1em 0;
@@ -92,7 +92,7 @@ blockquote {
   width: 5px;
   height: 100%;
   position: absolute;
-  left: 35px;
+  left: 6%;
   top: 0;
   content: ' ';
   display: block;
@@ -114,7 +114,7 @@ blockquote {
 }
 #awards .year,
 #education .year{
-  width: 20%;
+  width: 15%;
   background: #fff;
   padding: 10px 10px 10px 0px;
   font-weight: 700;
@@ -123,8 +123,9 @@ blockquote {
 }
 #awards .infos,
 #education .infos{
-  width: 80%;
+  width: 85%;
   display: inline-block;
+  text-align: justify;
   background: #eee;
   margin-bottom: 10px;
   position: relative;
@@ -161,14 +162,14 @@ blockquote {
 
 
 .job{
-  margin-bottom: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
 }
 .job .details {
   margin-left: 3%;
   margin-right: 3%;
   width: 95%;
   padding: 10px;
-  margin-bottom: 10px;
   background: #eee;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -200,9 +201,13 @@ blockquote {
   font-weight: bold;
 }
 .job .job-details {
-  padding-left: 5%;
-  padding-right: 5%;
-  width: 100%;
+  padding-top: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: justify;
+  background: #fcfcfc;
+  border-bottom: 1px solid #dedede;
+  border-right: 1px solid #dedede;
 }
 .publication {
   margin-bottom: 0;
@@ -217,6 +222,10 @@ blockquote {
 .publication p{
   margin: 0;
   padding-top: 10px;
+}
+
+.contact{
+  padding-top:10px;
 }
 
 .contact-item{
