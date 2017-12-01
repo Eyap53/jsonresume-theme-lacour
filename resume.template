@@ -17,29 +17,68 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-		  <!-- HEADER -->
-          <div id="photo-header" class="text-center">
-            <!-- PHOTO (AVATAR) -->
-            {{#photo}}
-            <div id="photo">
-              <img src="{{photo}}" alt="avatar">
-            </div>
-            {{/photo}}
-            <div id="text-header" {{^photo}}style="margin-top: 90px;"{{/photo}}>
-              <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
+      <header id="header">
+      <!-- HEADER -->
+        <div class="row">
+          <div class="col-sm-7">
+            <div id="photo-header" class="text-center">
+              <!-- PHOTO (AVATAR) -->
+              {{#photo}}
+              <div id="photo">
+                <img src="{{photo}}" alt="avatar">
+              </div>
+              {{/photo}}
+              <div id="text-header" {{^photo}}style="margin-top: 90px;"{{/photo}}>
+                <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
+              </div>
             </div>
           </div>
+          <div class="col-sm-5 contact">
+          <!-- CONTACT -->
+              <div class="box clearfix">
+                {{#basics.location}}
+                <div class="contact-item">
+                  <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
+                  {{#basics.location.address}}<div class="title pull-right">{{basics.location.address}}</div>{{/basics.location.address}}
+                  <div class="title {{^basics.location.address}}only {{/basics.location.address}} pull-right">{{basics.location.city}}{{#basics.location.region}}, {{basics.location.region}}{{/basics.location.region}}{{#basics.location.postalCode}} {{basics.location.postalCode}}{{/basics.location.postalCode}}{{#basics.location.countryCode}} {{basics.location.countryCode}}{{/basics.location.countryCode}}</div>
+                </div>
+                {{/basics.location}}
+                {{#basics.phone}}
+                <div class="contact-item">
+                  <div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
+                  <div class="title only pull-right">{{basics.phone}}</div>
+                </div>
+                {{/basics.phone}}
+                {{#basics.email}}
+                <div class="contact-item">
+                  <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
+                  <div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
+                </div>
+                {{/basics.email}}
+                {{#basics.url}}
+                <div class="contact-item">
+                  <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
+                  <div class="title only pull-right"><a href="{{basics.url}}" target="_blank">{{basics.url}}</a></div>
+                </div>
+                {{/basics.url}}
+                {{#profilesBool}}
+                {{#basics.profiles}}
+                  <div class="contact-item">
+                    <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
+                    <div class="title only pull-right">{{network}} - <a href="{{url}}" target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{url}}{{/username}}</a></div>
+                  </div>
+                  {{/basics.profiles}}
+                {{/profilesBool}}
+          </div>
         </div>
-      </div>
+      </header>
       <div class="row">
         <div class="col-xs-12 col-sm-7">
           {{#basics.summary}}
           <!-- ABOUT ME -->
           <div class="box">
             <h2><i class="fa fa-user ico"></i> À propos</h2>
-            <p>{{{basics.summary}}}</p>
+            <p class="text-justify">{{{basics.summary}}}</p>
           </div>
           {{/basics.summary}}
           {{#workBool}}
@@ -47,10 +86,10 @@
           <div class="box">
             <h2><i class= "fa fa-suitcase ico"></i> Expérience professionnelle</h2>
             {{#work}}
-              <div class="job clearfix">
-                <div class="row">
+              <div class="job clearfix row">
+
                   <div class="details">
-                    <span class="where">{{name}}</span> - <span class="description">{{description}}</span>
+                    <span class="where">{{name}}</span> - <span class="description">{{description}}{{#location}} ({{location}}){{/location}}</span>
                     <div class="row">
                       <div class="year col-xs-6">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
                       <div class="address col-xs-6 text-right">
@@ -58,14 +97,12 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
                   <div class="job-details col-xs-11">
                     <div class="profession">{{position}}</div>
                     <div class="infos">
                       {{{summary}}}
                       {{#boolHighlights}}
-                      <div class="highlights">Points clé</div>
+                      <div class="highlights">Points clés</div>
                       <ul class="list-group">
                         {{#highlights}}
                         <li class="list-group-item">{{{.}}}</li>
@@ -74,7 +111,6 @@
                       {{/boolHighlights}}
                     </div>
                   </div>
-                </div>
               </div>
             {{/work}}
           </div>
@@ -108,7 +144,7 @@
 						{{/keywords}}
 					</div>
                       {{#boolHighlights}}
-                      <div class="highlights">Points clé</div>
+                      <div class="highlights">Points clés</div>
                       <ul class="list-group">
                         {{#highlights}}
                         <li class="list-group-item">{{{.}}}</li>
@@ -163,7 +199,7 @@
                     <div class="infos">
                       {{{summary}}}
                       {{#boolHighlights}}
-                      <div class="highlights">Points clé</div>
+                      <div class="highlights">Points clés</div>
                       <ul class="list-group">
                         {{#highlights}}
                         <li class="list-group-item">{{{.}}}</li>
@@ -180,42 +216,6 @@
         </div>
 
         <div class="col-xs-12 col-sm-5">
-			<!-- CONTACT -->
-          <div class="box clearfix">
-            <h2><i class="fa fa-bullseye ico"></i> Contact</h2>
-            {{#basics.location}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
-              {{#basics.location.address}}<div class="title pull-right">{{basics.location.address}}</div>{{/basics.location.address}}
-              <div class="title {{^basics.location.address}}only {{/basics.location.address}} pull-right">{{basics.location.city}}{{#basics.location.region}}, {{basics.location.region}}{{/basics.location.region}}{{#basics.location.postalCode}} {{basics.location.postalCode}}{{/basics.location.postalCode}}{{#basics.location.countryCode}} {{basics.location.countryCode}}{{/basics.location.countryCode}}</div>
-            </div>
-            {{/basics.location}}
-            {{#basics.phone}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
-              <div class="title only pull-right">{{basics.phone}}</div>
-            </div>
-            {{/basics.phone}}
-            {{#basics.email}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
-              <div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
-            </div>
-            {{/basics.email}}
-            {{#basics.url}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
-              <div class="title only pull-right"><a href="{{basics.url}}" target="_blank">{{basics.url}}</a></div>
-            </div>
-            {{/basics.url}}
-			{{#profilesBool}}
-				<div class="icon text-center">
-					{{#basics.profiles}}
-						<a class="{{iconClass}} fa-2x profiles" href="{{url}}"></a>
-					{{/basics.profiles}}
-				</div>
-			{{/profilesBool}}
-          </div>
           {{#educationBool}}
           <!-- EDUCATION -->
           <div class="box">
@@ -224,9 +224,9 @@
               {{#education}}
               <li>
                 <div class="year pull-left">
-				{{endDateYear}}<br>
-				{{startDateYear}}
-				</div>
+          				{{endDateYear}}<br>
+          				{{startDateYear}}
+        				</div>
                 <div class="infos pull-right">
                   <h3>{{institution}}</h3>
                   {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
@@ -311,18 +311,15 @@
           <!-- HOBBIES -->
           <div class="box">
             <h2><i class="fa fa-heart ico"></i> Interêts</h2>
+            <ul class="list-group">
             {{#interests}}
-            <div class="interests clearfix">
-              <div class="item-interests">
-                  {{name}}
-              </div>
-              <div class="col-sm-offset-1 col-sm-12 clearfix">
+              <li class=" list-group-item">{{name}}
                 {{#keywords}}
-                <span class= "interest badge">{{{.}}}</span>
+                <span class= "interest badge pull-right">{{{.}}}</span>
                 {{/keywords}}
-              </div>
-            </div>
+              </li>
             {{/interests}}
+            </ul>
           </div>
           {{/interestsBool}}
           {{#referencesBool}}
