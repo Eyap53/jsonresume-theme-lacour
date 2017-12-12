@@ -92,9 +92,11 @@
                     <span class="where">{{name}}</span> - <span class="description">{{description}}{{#location}} ({{location}}){{/location}}</span>
                     <div class="row">
                       <div class="year col-xs-6">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
-                      <div class="address col-xs-6 text-right">
-                        <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
-                      </div>
+                      {{#url}}
+                        <div class="address col-xs-6 text-right">
+                          <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
+                        </div>
+                      {{/url}}
                     </div>
                   </div>
                   <div class="job-details col-xs-11">
@@ -161,14 +163,21 @@
           {{#awardsBool}}
           <!-- AWARDS -->
           <div class="box">
-            <h2><i class="fa fa-certificate ico"></i> Distinctions</h2>
+            <h2><i class="fa fa-certificate ico"></i> Récompenses</h2>
             <ul id="awards" class="clearfix">
               {{#awards}}
               <li>
                 <div class="year pull-left">{{month}} {{year}}</div>
                 <div class="infos pull-right">
                   <h3>{{awarder}}</h3>
-                  <p><i class="fa fa-trophy ico"></i> {{title}}</p>
+                  <div class="row">
+                  <div class="col-xs-6"><i class="fa fa-trophy ico"></i> {{title}}</div>
+                  {{#url}}
+                    <div class="address col-xs-6 text-right">
+                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
+                    </div>
+                  {{/url}}
+                  </div>
                   <p>{{{summary}}}</p>
                 </div>
               </li>
