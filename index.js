@@ -35,6 +35,38 @@ function getMonth(startDateStr) {
     }
 }
 
+function getPeriod(startDate, endDate) {
+  if(endDate) {
+      endDateYear = (endDate || "").substr(0,4);
+      endDateMonth = getMonth(endDate || "");
+  } else {
+      endDateYear = "Aujourd'hui";
+      endDateMonth = "";
+  };
+
+  if (startDate) {
+      startDateYear = (startDate || "").substr(0,4);
+      startDateMonth = getMonth(startDate || "");
+
+      if (startDateYear == endDateYear) {
+
+        if (startDateMonth == endDateMonth) {
+          return startDateMonth + " " + startDateYear.toString();
+        }
+        else {
+          return startDateMonth + " - " + endDateMonth + " " + startDateYear.toString();
+        };
+
+      }
+      else {
+        return startDateMonth + " " + startDateYear.toString() + " - " + endDateMonth + " " + endDateYear.toString();
+      };
+  }
+  else {
+    return "";
+  };
+}
+
 function render(resumeObject) {
 
     resumeObject.basics.capitalName = resumeObject.basics.name.toUpperCase();
@@ -48,7 +80,7 @@ function render(resumeObject) {
     if (resumeObject.basics.image || resumeObject.basics.gravatar) {
         resumeObject.photo = resumeObject.basics.image ? resumeObject.basics.image : resumeObject.basics.gravatar;
     }
-	
+
     if (resumeObject.basics.profiles && resumeObject.basics.profiles.length) {
         resumeObject.profilesBool = true;
 		_.each(resumeObject.basics.profiles, function(p){
@@ -103,17 +135,8 @@ function render(resumeObject) {
     if (resumeObject.work && resumeObject.work.length) {
         resumeObject.workBool = true;
         _.each(resumeObject.work, function(w){
-            if (w.startDate) {
-                w.startDateYear = (w.startDate || "").substr(0,4);
-                w.startDateMonth = getMonth(w.startDate || "");
+            w.period = getPeriod(w.startDate, w.endDate);
 
-            }
-            if(w.endDate) {
-                w.endDateYear = (w.endDate || "").substr(0,4);
-                w.endDateMonth = getMonth(w.endDate || "");
-            } else {
-                w.endDateYear = "Aujourd'hui";
-            }
             if (w.highlights) {
                 if (w.highlights[0]) {
                     if (w.highlights[0] != "") {
@@ -123,21 +146,12 @@ function render(resumeObject) {
             };
         });
     };
-	
+
 	if (resumeObject.projects && resumeObject.projects.length) {
         resumeObject.projectsBool = true;
         _.each(resumeObject.projects, function(p){
-            if (p.startDate) {
-                p.startDateYear = (p.startDate || "").substr(0,4);
-                p.startDateMonth = getMonth(p.startDate || "");
+            p.period = getPeriod(p.startDate, p.endDate);
 
-            }
-            if(p.endDate) {
-                p.endDateYear = (p.endDate || "").substr(0,4);
-                p.endDateMonth = getMonth(p.endDate || "");
-            } else {
-                p.endDateYear = "Aujourd'hui";
-            }
             if (p.highlights) {
                 if (p.highlights[0]) {
                     if (p.highlights[0] != "") {
@@ -151,17 +165,8 @@ function render(resumeObject) {
     if (resumeObject.volunteer && resumeObject.volunteer.length) {
         resumeObject.volunteerBool = true;
         _.each(resumeObject.volunteer, function(w){
-            if (w.startDate) {
-                w.startDateYear = (w.startDate || "").substr(0,4);
-                w.startDateMonth = getMonth(w.startDate || "");
+            w.period = getPeriod(w.startDate, w.endDate);
 
-            }
-            if(w.endDate) {
-                w.endDateYear = (w.endDate || "").substr(0,4);
-                w.endDateMonth = getMonth(w.endDate || "");
-            } else {
-                w.endDateYear = "Aujourd'hui";
-            }
             if (w.highlights) {
                 if (w.highlights[0]) {
                     if (w.highlights[0] != "") {
