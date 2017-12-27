@@ -91,7 +91,7 @@
                   <div class="details">
                     <span class="where">{{name}}</span> - <span class="description">{{description}}{{#location}} ({{location}}){{/location}}</span>
                     <div class="row">
-                      <div class="year col-xs-6">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
+                      <div class="year col-xs-6">{{period}}</div>
                       {{#url}}
                         <div class="address col-xs-6 text-right">
                           <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
@@ -126,7 +126,7 @@
                 <div class="row">
                   <div class="details row">
                     <div class="col-xs-7">
-                      <span class="where">{{name}}</span> : <span class="year description">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</span>
+                      <span class="where">{{name}}</span> : <span class="year description">{{period}}</span>
                     </div>
                     {{#url}}
                     <div class="address col-xs-5 text-right">
@@ -199,7 +199,7 @@
                       <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
                     </div>
                     {{/url}}
-                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
+                    <div class="year">{{period}}</div>
                   </div>
                 </div>
                 <div class="row">
