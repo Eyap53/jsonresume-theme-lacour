@@ -58,7 +58,7 @@
                 {{#basics.url}}
                 <div class="contact-item">
                   <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
-                  <div class="title only pull-right"><a href="{{basics.url}}" target="_blank">{{basics.url}}</a></div>
+                  <div class="title only pull-right">Portfolio : <a href="{{basics.url}}" target="_blank">{{urlBeautified}}</a></div>
                 </div>
                 {{/basics.url}}
                 {{#profilesBool}}
