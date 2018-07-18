@@ -80,6 +80,9 @@ function render(resumeObject) {
     if (resumeObject.basics.image || resumeObject.basics.gravatar) {
         resumeObject.photo = resumeObject.basics.image ? resumeObject.basics.image : resumeObject.basics.gravatar;
     }
+    if (resumeObject.basics.url) {
+        resumeObject.urlBeautified = resumeObject.basics.url.replace("http://", "").replace("https://","").replace("www.","");
+    }
 
     if (resumeObject.basics.profiles && resumeObject.basics.profiles.length) {
         resumeObject.profilesBool = true;
