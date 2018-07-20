@@ -35,6 +35,10 @@ function getMonth(startDateStr) {
     }
 }
 
+function beautifyUrl(url) {
+    return url.replace("http://", "").replace("https://","").replace("www.","");
+}
+
 function getPeriod(startDate, endDate) {
   if(endDate) {
       endDateYear = (endDate || "").substr(0,4);
@@ -81,7 +85,7 @@ function render(resumeObject) {
         resumeObject.photo = resumeObject.basics.image ? resumeObject.basics.image : resumeObject.basics.gravatar;
     }
     if (resumeObject.basics.url) {
-        resumeObject.urlBeautified = resumeObject.basics.url.replace("http://", "").replace("https://","").replace("www.","");
+        resumeObject.basics.beautifiedUrl = beautifyUrl(resumeObject.basics.url);
     }
 
     if (resumeObject.basics.profiles && resumeObject.basics.profiles.length) {
@@ -131,7 +135,12 @@ function render(resumeObject) {
 				default:
 					// try to automatically select the icon based on the name
 					p.iconClass = "fa fa-" + p.network.toLowerCase();
-			};
+            };
+            
+            if (p.url){
+                p.beautifiedUrl = beautifyUrl(p.url);
+            }
+            
 		});
 	};
 
@@ -147,6 +156,10 @@ function render(resumeObject) {
                     };
                 };
             };
+
+            if (w.url){
+                w.beautifiedUrl = beautifyUrl(w.url);
+            }
         });
     };
 
@@ -159,9 +172,13 @@ function render(resumeObject) {
                 if (p.highlights[0]) {
                     if (p.highlights[0] != "") {
                         p.boolHighlights = true;
-                    };
-                };
-            };
+                    }
+                }
+            }
+
+            if (p.url){
+                p.beautifiedUrl = beautifyUrl(p.url);
+            }
         });
     };
 
@@ -176,6 +193,10 @@ function render(resumeObject) {
                         w.boolHighlights = true;
                     }
                 }
+            }
+
+            if (w.url){
+                w.beautifiedUrl = beautifyUrl(w.url);
             }
         });
     }
@@ -222,6 +243,10 @@ function render(resumeObject) {
                 a.year = (a.date || "").substr(0,4);
                 a.day = (a.date || "").substr(8,2);
                 a.month = getMonth(a.date || "");
+
+                if (a.url){
+                    a.beautifiedUrl = beautifyUrl(a.url);
+                }
             });
         }
     }
@@ -233,6 +258,10 @@ function render(resumeObject) {
                 a.year = (a.releaseDate || "").substr(0,4);
                 a.day = (a.releaseDate || "").substr(8,2);
                 a.month = getMonth(a.releaseDate || "");
+
+                if (a.url){
+                    a.beautifiedUrl = beautifyUrl(a.url);
+                }
             });
         }
     }

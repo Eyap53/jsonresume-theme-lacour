@@ -58,14 +58,14 @@
                 {{#basics.url}}
                 <div class="contact-item">
                   <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
-                  <div class="title only pull-right">Portfolio : <a href="{{basics.url}}" target="_blank">{{urlBeautified}}</a></div>
+                  <div class="title only pull-right">Portfolio : <a href="{{basics.url}}" target="_blank">{{basics.beautifiedUrl}}</a></div>
                 </div>
                 {{/basics.url}}
                 {{#profilesBool}}
                 {{#basics.profiles}}
                   <div class="contact-item">
                     <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
-                    <div class="title only pull-right">{{network}} - <a href="{{url}}" target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{url}}{{/username}}</a></div>
+                    <div class="title only pull-right">{{network}} - <a href="{{url}}" target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{beautifiedUrl}}{{/username}}</a></div>
                   </div>
                   {{/basics.profiles}}
                 {{/profilesBool}}
@@ -94,7 +94,7 @@
                       <div class="year col-xs-6">{{period}}</div>
                       {{#url}}
                         <div class="address col-xs-6 text-right">
-                          <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
+                          <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
                         </div>
                       {{/url}}
                     </div>
@@ -130,7 +130,7 @@
                     </div>
                     {{#url}}
                     <div class="address col-xs-5 text-right">
-                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
+                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
                     </div>
                     {{/url}}
                   </div>
@@ -174,7 +174,7 @@
                   <div class="col-xs-6"><i class="fa fa-certificate ico"></i> {{awarder}}</div>
                   {{#url}}
                     <div class="address col-xs-6 text-right">
-                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
+                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
                     </div>
                   {{/url}}
                   </div>
@@ -196,7 +196,7 @@
                     <div class="where">{{organization}}</div>
                     {{#url}}
                     <div class="address">
-                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
+                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
                     </div>
                     {{/url}}
                     <div class="year">{{period}}</div>
@@ -294,7 +294,7 @@
                 <div class="year">{{day}} {{month}} {{year}}</div>
                 {{#url}}
                 <div class="address">
-                  <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
+                  <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
                 </div>
                 {{/url}}
                 {{#summary}}
