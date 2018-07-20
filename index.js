@@ -11,7 +11,7 @@ function getMonth(startDateStr) {
     case '01':
         return "Janvier ";
     case '02':
-        return "Fevrier ";
+        return "Février ";
     case '03':
         return "Mars ";
     case '04':
@@ -31,7 +31,7 @@ function getMonth(startDateStr) {
     case '11':
         return "Novembre ";
     case '12':
-        return "Decembre ";
+        return "Décembre ";
     }
 }
 
@@ -140,7 +140,7 @@ function render(resumeObject) {
             if (p.url){
                 p.beautifiedUrl = beautifyUrl(p.url);
             }
-            
+
 		});
 	};
 
