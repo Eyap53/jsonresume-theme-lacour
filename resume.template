@@ -80,8 +80,8 @@
           {{#basics.summary}}
           <!-- ABOUT ME -->
           <div class="box">
-            <h2><i class="fa fa-user ico"></i> À propos</h2>
-            <p class="text-justify">{{{basics.summary}}}</p>
+            <h2></h2>
+            <p id="about">{{{basics.summary}}}</p>
           </div>
           {{/basics.summary}}
           {{#workBool}}
@@ -92,7 +92,7 @@
               <div class="job clearfix row">
 
                   <div class="details">
-                    <span class="where">{{name}}</span> - <span class="description">{{description}}{{#location}} ({{location}}){{/location}}</span>
+                    <span class="name">{{name}}</span> - <span class="profession">{{position}}</span>
                     <div class="row">
                       <div class="year col-xs-6">{{period}}</div>
                       {{#url}}
@@ -103,7 +103,6 @@
                     </div>
                   </div>
                   <div class="job-details col-xs-11">
-                    <div class="profession">{{position}}</div>
                     <div class="infos">
                       {{{summary}}}
                       {{#boolHighlights}}
@@ -115,6 +114,7 @@
                       </ul>
                       {{/boolHighlights}}
                     </div>
+                    <div class="description">{{name}} : {{description}} {{#location}}({{location}}){{/location}}</div>
                   </div>
               </div>
             {{/work}}
@@ -262,25 +262,6 @@
             </ul>
           </div>
           {{/educationBool}}
-          {{#skillsBool}}
-          <!-- SKILLS -->
-          <div class="box">
-            <h2><i class="fa fa-tasks ico"></i> Compétences</h2>
-            {{#skills}}
-            <div class="skills clearfix">
-              <div class="item-skills">
-                  {{name}}
-                  {{#level}}<span class="skill-level">{{level}}</span>{{/level}}
-              </div>
-              <div class="col-sm-offset-1 col-sm-12 clearfix">
-                {{#keywords}}
-                <span class= "skill badge">{{{.}}}</span>
-                {{/keywords}}
-              </div>
-            </div>
-            {{/skills}}
-          </div>
-          {{/skillsBool}}
           {{#publicationsBool}}
           <!-- PUBLICATIONS -->
           <div class="box">
@@ -308,6 +289,22 @@
             {{/publications}}
           </div>
           {{/publicationsBool}}
+          {{#skillsBool}}
+          <!-- SKILLS -->
+          <div class="box">
+            <h2><i class="fa fa-tasks ico"></i> Compétences</h2>
+            <ul class="list-group">
+            {{#skills}}
+            <li class=" list-group-item">
+                {{name}}
+                {{#keywords}}
+                <span class= "interest badge pull-right">{{{.}}}</span>
+                {{/keywords}}
+              </li>
+            {{/skills}}
+            </ul>
+          </div>
+          {{/skillsBool}}
           {{#languagesBool}}
           <!-- LANGUAGES -->
           <div class="box">
@@ -325,7 +322,8 @@
             <h2><i class="fa fa-heart ico"></i> Interêts</h2>
             <ul class="list-group">
             {{#interests}}
-              <li class=" list-group-item">{{name}}
+              <li class=" list-group-item">
+                {{name}}
                 {{#keywords}}
                 <span class= "interest badge pull-right">{{{.}}}</span>
                 {{/keywords}}
@@ -335,6 +333,7 @@
           </div>
           {{/interestsBool}}
           {{#referencesBool}}
+          <!-- REFERENCES -->
           <div class="box">
             <h2><i class= "fa fa-check-square ico"></i> Références</h2>
             {{#references}}

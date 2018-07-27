@@ -66,15 +66,21 @@ blockquote {
   display: block;
 }
 
-/*.box{
+/* .box{
   padding-bottom: 10px;
   margin-bottom: 10px;
-}*/
+} */
+
 .box h2{
   color: #227c74;
   font-size: 1.5em;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+#about {
+  text-align: justify;
+  font-style: italic;
 }
 
 #awards,
@@ -95,12 +101,12 @@ blockquote {
   content: ' ';
   display: block;
   background: #234569;
-  background: -moz-linear-gradient(top,  #ffffff 0%, #32475c 7%, #32475c 89%, #ffffff 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#32475c), color-stop(89%,#32475c), color-stop(100%,#ffffff));
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  background: -o-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  background: -ms-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  background: linear-gradient(to bottom,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
+  background: -moz-linear-gradient(top,  #ffffff 0%, #234569 7%, #234569 89%, #ffffff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#234569), color-stop(89%,#234569), color-stop(100%,#ffffff));
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#234569 7%,#234569 89%,#ffffff 100%);
+  background: -o-linear-gradient(top,  #ffffff 0%,#234569 7%,#234569 89%,#ffffff 100%);
+  background: -ms-linear-gradient(top,  #ffffff 0%,#234569 7%,#234569 89%,#ffffff 100%);
+  background: linear-gradient(to bottom,  #ffffff 0%,#234569 7%,#234569 89%,#ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
 }
 #awards li,
@@ -160,8 +166,8 @@ blockquote {
 
 
 .job{
-  padding-bottom: 5px;
-  margin-bottom: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
 }
 .job .details {
   margin-left: 3%;
@@ -172,22 +178,22 @@ blockquote {
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-.job .where{
-  font-size: 1.2em;
+.job .name{
+  font-size: 1.1em;
   font-weight: bold;
 }
-.job .description{
-  font-size: 0.88em;
-  font-style: italic;
+.job .profession{
+  font-size: 1.3em;
+  font-weight: bold;
 }
 .job .year{
   opacity: 0.7;
 }
-.job .profession{
-  font-size: 0.88em;
+.job .description{
+  font-size: 0.85em;
   color: #666;
   font-style: italic;
-  padding-left: 2%;
+  padding-left: 1%;
 }
 .job .infos{
   line-height: 1.5em;
@@ -205,7 +211,8 @@ blockquote {
   margin-left: 5%;
   margin-right: 5%;
   text-align: justify;
-  background: #fbfbfb;
+  background: #f8f8f8;
+  border-left: 0.5px solid #dedede;
   border-bottom: 0.5px solid #dedede;
   border-right: 0.5px solid #dedede;
 }
@@ -275,23 +282,15 @@ blockquote {
 }
 .interest,
 .skill{
-  color: #fff;
+  color: #234569;
+  background: #fff;
+  border: 0.5px solid #234569;
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 5px;
   padding: 5px 10px;
-  background: #32475c;
   position: relative;
-  font-size: .85em;
-}
-.skill-level {
-  background-color: #227c74;
-  border-radius: 4px;
-  color: #fff;
-  padding: 1px 8px;
-  font-size: .75em;
-  position: absolute;
-  margin: 1px 10px;
+  font-size: 1em;
 }
 
 #language-skills .skill{
