@@ -90,7 +90,6 @@
             <h2><i class= "fa fa-suitcase ico"></i> Expérience professionnelle</h2>
             {{#work}}
               <div class="job clearfix row">
-
                   <div class="details">
                     <span class="name">{{name}}</span> - <span class="profession">{{position}}</span>
                     <div class="row">
@@ -127,20 +126,20 @@
             {{#projects}}
               <div class="job clearfix">
                 <div class="row">
-                  <div class="details row">
-                    <div class="col-xs-7">
-                      <span class="where">{{name}}</span> : <span class="year description">{{period}}</span>
-                    </div>
-                    {{#url}}
-                    <div class="address col-xs-5 text-right">
-                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
-                    </div>
-                    {{/url}}
-                  </div>
+                    <div class="details">
+                        <span class="name">{{name}}</span> - <span class="profession">{{position}}</span>
+                        <div class="row">
+                          <div class="year col-xs-6">{{period}}</div>
+                          {{#url}}
+                            <div class="address col-xs-6 text-right">
+                              <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
+                            </div>
+                          {{/url}}
+                        </div>
+                      </div>
                 </div>
                 <div class="row">
                   <div class="job-details col-xs-11">
-                    <div class="profession">{{position}}</div>
                     <div class="infos">
                       {{{description}}}
 					 <div class="col-sm-offset-1 col-sm-12 clearfix badges">

@@ -192,6 +192,7 @@ blockquote {
 .job .year{
   opacity: 0.7;
   font-weight: lighter;
+  font-style: italic;
 }
 .job .address{
   font-weight: lighter;
