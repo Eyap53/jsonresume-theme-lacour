@@ -20,7 +20,7 @@
       <header id="header">
       <!-- HEADER -->
         <div class="row">
-          <div class="col-sm-7">
+          <div class="col-sm-3">
             <div id="photo-header" class="text-center">
               <!-- PHOTO (AVATAR) -->
               {{#photo}}
@@ -28,14 +28,22 @@
                 <img src="{{photo}}" alt="avatar">
               </div>
               {{/photo}}
-              <div id="text-header" {{^photo}}style="margin-top: 90px;"{{/photo}}>
-                <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
-              </div>
             </div>
           </div>
-          <div class="col-sm-5 contact">
+          <div class="col-sm-5">
+              <div id="text-header">
+                <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
+              </div>
+          </div>
+          <div class="col-sm-4 contact">
           <!-- CONTACT -->
               <div class="box clearfix">
+                {{#basics.url}}
+                <div class="contact-item">
+                  <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
+                  <div class="title only pull-right">Portfolio : <a href="{{basics.url}}" target="_blank">{{basics.beautifiedUrl}}</a></div>
+                </div>
+                {{/basics.url}}
                 {{#basics.location}}
                 <div class="contact-item">
                   <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
@@ -55,12 +63,6 @@
                   <div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
                 </div>
                 {{/basics.email}}
-                {{#basics.url}}
-                <div class="contact-item">
-                  <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
-                  <div class="title only pull-right">Portfolio : <a href="{{basics.url}}" target="_blank">{{basics.beautifiedUrl}}</a></div>
-                </div>
-                {{/basics.url}}
                 {{#profilesBool}}
                 {{#basics.profiles}}
                   <div class="contact-item">
@@ -69,6 +71,7 @@
                   </div>
                   {{/basics.profiles}}
                 {{/profilesBool}}
+            </div>
           </div>
         </div>
       </header>

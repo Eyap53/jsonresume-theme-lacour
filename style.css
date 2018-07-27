@@ -10,7 +10,7 @@ body{
   font-family: 'Open Sans', Arial, Tahoma;
   font-weight: 400;
   color: #363636;
-  background: #334960;
+  background: #234569;
 }
 blockquote {
   font-size: 1em;
@@ -23,29 +23,30 @@ blockquote {
 }
 
 #photo-header{
-  margin-top: -75px;
+  margin-top: -40px;
 }
 #photo{
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
   padding: 5px;
-  background: #334960;
+  background: #234569;
   display: inline-block;
 }
 #photo img{
-  width: 150px;
-  height: 150px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
 }
 #text-header h1{
-  margin: 0;
+  margin: 20 0 0 0;
   padding: 0;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -1px;
+  text-align: center;
 }
 #text-header h1::first-line{
   font-size: 1.5em;
@@ -53,11 +54,8 @@ blockquote {
   line-height: 1.5em;
 }
 #text-header h1 span{
-  color: #334960;
-  opacity: 0.7;
-}
-#text-header h1 sup{
-  opacity: 0.5;
+  color: #234569;
+  opacity: 0.9;
 }
 #header:after{
   width: 100%;
@@ -96,7 +94,7 @@ blockquote {
   top: 0;
   content: ' ';
   display: block;
-  background: #32475c;
+  background: #234569;
   background: -moz-linear-gradient(top,  #ffffff 0%, #32475c 7%, #32475c 89%, #ffffff 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#32475c), color-stop(89%,#32475c), color-stop(100%,#ffffff));
   background: -webkit-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
@@ -238,7 +236,7 @@ blockquote {
   padding: 10px;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  color: #32475c;
+  color: #234569;
   background: #eee;
 }
 .contact-item .title{
@@ -253,7 +251,7 @@ blockquote {
 .contact-item .infos{
   width: 80%;
   width: calc(100% - 55px);
-  color: #334960;
+  color: #234569;
 }
 
 .profiles{
@@ -266,7 +264,7 @@ blockquote {
 .item-interests,
 .item-skills{
   height: 30px;
-  color: #334960;
+  color: #234569;
   padding: 5px 10px;
   margin-bottom: 5px;
   white-space: nowrap;
