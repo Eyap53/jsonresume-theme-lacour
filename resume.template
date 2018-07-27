@@ -123,7 +123,7 @@
 		  {{#projectsBool}}
           <!-- PROJECTS EXPERIENCE -->
           <div class="box">
-            <h2><i class= "fa fa-suitcase ico"></i> Projets Personnels :</h2>
+            <h2><i class= "fa fa-code ico"></i> Projets Personnels :</h2>
             {{#projects}}
               <div class="job clearfix">
                 <div class="row">
