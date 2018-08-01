@@ -37,7 +37,6 @@
           </div>
           <div class="col-sm-4 contact">
           <!-- CONTACT -->
-              <div class="box clearfix">
                 {{#basics.url}}
                 <div class="contact-item">
                   <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
@@ -71,7 +70,6 @@
                   </div>
                   {{/basics.profiles}}
                 {{/profilesBool}}
-            </div>
           </div>
         </div>
       </header>
@@ -348,6 +346,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
