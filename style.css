@@ -18,8 +18,10 @@ blockquote {
 
 .container{
   margin-top: 50px;
-  margin-bottom: 15px;
   background: #fff;
+  margin-bottom: 15px;
+  border-right: 15px solid #234569;
+  border-left: 15px solid #234569;
 }
 
 #photo-header{
