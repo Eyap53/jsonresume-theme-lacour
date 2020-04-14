@@ -1,11 +1,7 @@
-# Custom JSONResume theme based on kendall
+# Custom JSONResume theme
 
 A theme for JSONResume, __in French__, that relies on Bootstrap and FontAwesome.
-
-## Example
-
-You can get a resume wich look like this one :
-![Example of resume](media/example.png)
+Initially based on [LinuxBozo](https://github.com/LinuxBozo)'s theme but modified to better fit my needs, particularly in the header and sections displays.
 
 ## Usage
 
@@ -49,14 +45,7 @@ If you want to keep your resume mobile-friendly, please limit the number of prof
 
 Every section is optional also. If per se, you do not include the publications array in your resume.json, no publications section will appear.
 
-If you find any other problems with this theme in specified, do feel free to leave an issue. Thanks.
-
-## Authors
-
-* **Adam Kendall** - *Initial work* - [LinuxBozo](https://github.com/LinuxBozo)
-* **Mael Lacour** - *Translation, modifications* - [Eyap53](https://github.com/Eyap53)
-
-The initial work of Adam Kendall is under MIT license. See the [initial license](initial-license) file for details
+If you find any other problems with this theme, do feel free to leave an issue. Thanks.
 
 ## License
 
