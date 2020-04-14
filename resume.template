@@ -20,7 +20,7 @@
       <header id="header">
       <!-- HEADER -->
         <div class="row">
-          <div class="col-sm-7">
+          <div class="col-sm-3">
             <div id="photo-header" class="text-center">
               <!-- PHOTO (AVATAR) -->
               {{#photo}}
@@ -28,14 +28,21 @@
                 <img src="{{photo}}" alt="avatar">
               </div>
               {{/photo}}
-              <div id="text-header" {{^photo}}style="margin-top: 90px;"{{/photo}}>
-                <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
-              </div>
             </div>
           </div>
-          <div class="col-sm-5 contact">
+          <div class="col-sm-5">
+              <div id="text-header">
+                <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
+              </div>
+          </div>
+          <div class="col-sm-4 contact">
           <!-- CONTACT -->
-              <div class="box clearfix">
+                {{#basics.url}}
+                <div class="contact-item">
+                  <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
+                  <div class="title only pull-right">Portfolio : <a href="{{basics.url}}" target="_blank">{{basics.beautifiedUrl}}</a></div>
+                </div>
+                {{/basics.url}}
                 {{#basics.location}}
                 <div class="contact-item">
                   <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
@@ -55,12 +62,6 @@
                   <div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
                 </div>
                 {{/basics.email}}
-                {{#basics.url}}
-                <div class="contact-item">
-                  <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
-                  <div class="title only pull-right">Portfolio : <a href="{{basics.url}}" target="_blank">{{basics.beautifiedUrl}}</a></div>
-                </div>
-                {{/basics.url}}
                 {{#profilesBool}}
                 {{#basics.profiles}}
                   <div class="contact-item">
@@ -77,8 +78,8 @@
           {{#basics.summary}}
           <!-- ABOUT ME -->
           <div class="box">
-            <h2><i class="fa fa-user ico"></i> À propos</h2>
-            <p class="text-justify">{{{basics.summary}}}</p>
+            <h2></h2>
+            <p id="about">{{{basics.summary}}}</p>
           </div>
           {{/basics.summary}}
           {{#workBool}}
@@ -87,9 +88,8 @@
             <h2><i class= "fa fa-suitcase ico"></i> Expérience professionnelle</h2>
             {{#work}}
               <div class="job clearfix row">
-
                   <div class="details">
-                    <span class="where">{{name}}</span> - <span class="description">{{description}}{{#location}} ({{location}}){{/location}}</span>
+                    <span class="name">{{name}}</span> - <span class="profession">{{position}}</span>
                     <div class="row">
                       <div class="year col-xs-6">{{period}}</div>
                       {{#url}}
@@ -100,7 +100,6 @@
                     </div>
                   </div>
                   <div class="job-details col-xs-11">
-                    <div class="profession">{{position}}</div>
                     <div class="infos">
                       {{{summary}}}
                       {{#boolHighlights}}
@@ -112,6 +111,7 @@
                       </ul>
                       {{/boolHighlights}}
                     </div>
+                    <div class="description">{{name}} : {{description}} {{#location}}({{location}}){{/location}}</div>
                   </div>
               </div>
             {{/work}}
@@ -120,24 +120,24 @@
 		  {{#projectsBool}}
           <!-- PROJECTS EXPERIENCE -->
           <div class="box">
-            <h2><i class= "fa fa-suitcase ico"></i> Projets Personnels :</h2>
+            <h2><i class= "fa fa-code ico"></i> Projets Personnels :</h2>
             {{#projects}}
               <div class="job clearfix">
                 <div class="row">
-                  <div class="details row">
-                    <div class="col-xs-7">
-                      <span class="where">{{name}}</span> : <span class="year description">{{period}}</span>
-                    </div>
-                    {{#url}}
-                    <div class="address col-xs-5 text-right">
-                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
-                    </div>
-                    {{/url}}
-                  </div>
+                    <div class="details">
+                        <span class="name">{{name}}</span> - <span class="profession">{{position}}</span>
+                        <div class="row">
+                          <div class="year col-xs-6">{{period}}</div>
+                          {{#url}}
+                            <div class="address col-xs-6 text-right">
+                              <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
+                            </div>
+                          {{/url}}
+                        </div>
+                      </div>
                 </div>
                 <div class="row">
                   <div class="job-details col-xs-11">
-                    <div class="profession">{{position}}</div>
                     <div class="infos">
                       {{{description}}}
 					 <div class="col-sm-offset-1 col-sm-12 clearfix badges">
@@ -259,25 +259,6 @@
             </ul>
           </div>
           {{/educationBool}}
-          {{#skillsBool}}
-          <!-- SKILLS -->
-          <div class="box">
-            <h2><i class="fa fa-tasks ico"></i> Compétences</h2>
-            {{#skills}}
-            <div class="skills clearfix">
-              <div class="item-skills">
-                  {{name}}
-                  {{#level}}<span class="skill-level">{{level}}</span>{{/level}}
-              </div>
-              <div class="col-sm-offset-1 col-sm-12 clearfix">
-                {{#keywords}}
-                <span class= "skill badge">{{{.}}}</span>
-                {{/keywords}}
-              </div>
-            </div>
-            {{/skills}}
-          </div>
-          {{/skillsBool}}
           {{#publicationsBool}}
           <!-- PUBLICATIONS -->
           <div class="box">
@@ -305,6 +286,22 @@
             {{/publications}}
           </div>
           {{/publicationsBool}}
+          {{#skillsBool}}
+          <!-- SKILLS -->
+          <div class="box">
+            <h2><i class="fa fa-tasks ico"></i> Compétences</h2>
+            <ul class="list-group">
+            {{#skills}}
+            <li class=" list-group-item">
+                {{name}}
+                {{#keywords}}
+                <span class= "interest badge pull-right">{{{.}}}</span>
+                {{/keywords}}
+              </li>
+            {{/skills}}
+            </ul>
+          </div>
+          {{/skillsBool}}
           {{#languagesBool}}
           <!-- LANGUAGES -->
           <div class="box">
@@ -322,7 +319,8 @@
             <h2><i class="fa fa-heart ico"></i> Interêts</h2>
             <ul class="list-group">
             {{#interests}}
-              <li class=" list-group-item">{{name}}
+              <li class=" list-group-item">
+                {{name}}
                 {{#keywords}}
                 <span class= "interest badge pull-right">{{{.}}}</span>
                 {{/keywords}}
@@ -332,6 +330,7 @@
           </div>
           {{/interestsBool}}
           {{#referencesBool}}
+          <!-- REFERENCES -->
           <div class="box">
             <h2><i class= "fa fa-check-square ico"></i> Références</h2>
             {{#references}}
@@ -347,6 +346,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
