@@ -79,13 +79,13 @@
           <!-- ABOUT ME -->
           <div class="box">
             <h2></h2>
-            <p id="about">{{{basics.summary}}}</p>
+            <p id="about">"{{{basics.summary}}}"</p>
           </div>
           {{/basics.summary}}
           {{#workBool}}
           <!-- WORK EXPERIENCE -->
           <div class="box">
-            <h2><i class= "fa fa-suitcase ico"></i> Expérience professionnelle</h2>
+            <h2><i class= "fa fa-suitcase ico"></i> Work Experience</h2>
             {{#work}}
               <div class="job clearfix row">
                   <div class="details">
@@ -103,7 +103,7 @@
                     <div class="infos">
                       {{{summary}}}
                       {{#boolHighlights}}
-                      <div class="highlights">Points clés</div>
+                      <div class="highlights">Highlights</div>
                       <ul class="list-group">
                         {{#highlights}}
                         <li class="list-group-item">{{{.}}}</li>
@@ -120,7 +120,7 @@
 		  {{#projectsBool}}
           <!-- PROJECTS EXPERIENCE -->
           <div class="box">
-            <h2><i class= "fa fa-code ico"></i> Projets Personnels :</h2>
+            <h2><i class= "fa fa-code ico"></i> Projects experience</h2>
             {{#projects}}
               <div class="job clearfix">
                 <div class="row">
@@ -146,7 +146,7 @@
 						{{/keywords}}
 					</div>
                       {{#boolHighlights}}
-                      <div class="highlights">Points clés</div>
+                      <div class="highlights">Highlights</div>
                       <ul class="list-group">
                         {{#highlights}}
                         <li class="list-group-item">{{{.}}}</li>
@@ -163,7 +163,7 @@
           {{#awardsBool}}
           <!-- AWARDS -->
           <div class="box">
-            <h2><i class="fa fa-trophy ico"></i> Récompenses</h2>
+            <h2><i class="fa fa-trophy ico"></i> Awards</h2>
             <ul id="awards" class="clearfix">
               {{#awards}}
               <li>
@@ -188,7 +188,7 @@
           {{#volunteerBool}}
           <!-- VOLUNTEER -->
           <div class="box">
-            <h2><i class= "fa fa-group ico"></i> Bénévolat</h2>
+            <h2><i class= "fa fa-group ico"></i> Volunteer</h2>
             {{#volunteer}}
               <div class="job clearfix">
                 <div class="row">
@@ -208,7 +208,7 @@
                     <div class="infos">
                       {{{summary}}}
                       {{#boolHighlights}}
-                      <div class="highlights">Points clés</div>
+                      <div class="highlights">Highlights</div>
                       <ul class="list-group">
                         {{#highlights}}
                         <li class="list-group-item">{{{.}}}</li>
@@ -228,7 +228,7 @@
           {{#educationBool}}
           <!-- EDUCATION -->
           <div class="box">
-            <h2><i class="fa fa-university ico"></i> Formation</h2>
+            <h2><i class="fa fa-university ico"></i> Education</h2>
             <ul id="education" class="clearfix">
               {{#education}}
               <li>
@@ -246,7 +246,7 @@
                   </p>
                   {{/gpa}}
                   {{#educationCourses}}
-                    <div>Spécialités :</div>
+                    <div>Courses :</div>
                     <ul class="list-group">
                       {{#courses}}
                       <li class="list-group-item">{{{.}}}</li>
@@ -289,7 +289,7 @@
           {{#skillsBool}}
           <!-- SKILLS -->
           <div class="box">
-            <h2><i class="fa fa-tasks ico"></i> Compétences</h2>
+            <h2><i class="fa fa-tasks ico"></i> Skills</h2>
             <ul class="list-group">
             {{#skills}}
             <li class=" list-group-item">
@@ -305,7 +305,7 @@
           {{#languagesBool}}
           <!-- LANGUAGES -->
           <div class="box">
-            <h2><i class="fa fa-language ico"></i> Langues</h2>
+            <h2><i class="fa fa-language ico"></i> Languages</h2>
             <ul class="list-group">
               {{#languages}}
               <li class=" list-group-item">{{language}}<span class="skill badge pull-right">{{fluency}}</span></li>
@@ -316,7 +316,7 @@
           {{#interestsBool}}
           <!-- HOBBIES -->
           <div class="box">
-            <h2><i class="fa fa-heart ico"></i> Interêts</h2>
+            <h2><i class="fa fa-heart ico"></i> Interests</h2>
             <ul class="list-group">
             {{#interests}}
               <li class=" list-group-item">
@@ -332,7 +332,7 @@
           {{#referencesBool}}
           <!-- REFERENCES -->
           <div class="box">
-            <h2><i class= "fa fa-check-square ico"></i> Références</h2>
+            <h2><i class= "fa fa-check-square ico"></i> References</h2>
             {{#references}}
             <blockquote>
               <div>{{{reference}}}</div>
