@@ -89,7 +89,6 @@ blockquote {
   font-size: 1.35em;
 }
 
-#awards,
 #education{
   margin-top: 2px;
   margin-bottom: 0;
@@ -97,7 +96,7 @@ blockquote {
   padding: 1em 0;
   list-style: none;
 }
-#awards:before,
+
 #education:before {
   width: 5px;
   height: 100%;
@@ -115,14 +114,12 @@ blockquote {
   background: linear-gradient(to bottom,  #ffffff 0%,#234569 7%,#234569 89%,#ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
 }
-#awards li,
 #education li{
   width: 100%;
   z-index: 2;
   position: relative;
   float: left;
 }
-#awards .year,
 #education .year{
   width: 15%;
   background: #fff;
@@ -131,7 +128,6 @@ blockquote {
   display: inline-block;
   text-align: center;
 }
-#awards .infos,
 #education .infos{
   width: 85%;
   display: inline-block;
@@ -142,7 +138,6 @@ blockquote {
   padding: 10px;
   border-radius: 10px;
 }
-#awards .infos:after,
 #education .infos:after {
   content: '';
   position: absolute;
@@ -156,14 +151,12 @@ blockquote {
   border-width: 8px;
   pointer-events: none;
 }
-#awards .infos h3,
 #education .infos h3{
   font-size: 1.2em;
   margin: 0;
   padding: 0;
   font-weight: 700;
 }
-#awards .infos p,
 #education .infos p{
   margin-top: 5px;
   padding: 0;
@@ -300,9 +293,15 @@ blockquote {
   overflow: auto;
 }
 
-.list-group-item .item-name
+.item-name
 {
-  margin-right: 10px;
+  background: #fff;
+  border: 0.5px solid #fff;
+  display: inline-block;
+  margin-right: 5px;
+  padding: 2px 5px;
+  position: relative;
+  font-size: 1em;
 }
 
 #language-skills .skill{
