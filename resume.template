@@ -12,7 +12,7 @@
   <style type="text/css">
     {{{css}}}
   </style>
-  </head>
+</head>
 
 <body>
   <div class="container">
@@ -90,6 +90,7 @@
           <p id="about">"{{{basics.summary}}}"</p>
         </div>
         {{/basics.summary}}
+
         {{#workBool}}
         <!-- WORK EXPERIENCE -->
         <div class="box">
@@ -125,6 +126,7 @@
           {{/work}}
         </div>
         {{/workBool}}
+
         {{#projectsBool}}
         <!-- PROJECTS EXPERIENCE -->
         <div class="box">
@@ -168,30 +170,40 @@
           {{/projects}}
         </div>
         {{/projectsBool}}
+
+
         {{#awardsBool}}
         <!-- AWARDS -->
         <div class="box">
           <h2><i class="fa fa-trophy ico"></i> Récompenses</h2>
-          <ul id="awards" class="clearfix">
-            {{#awards}}
-            <li>
-              <div class="infos pull-right">
-                <h3>{{title}}</h3>
+          {{#awards}}
+          <div class="job clearfix">
+            <div class="row">
+              <div class="details">
+                <span class="name">{{awarder}}</span> - <span class="profession"><i class="fa fa-certificate ico"></i>
+                  {{title}}</span>
                 <div class="row">
-                  <div class="col-xs-6"><i class="fa fa-certificate ico"></i> {{awarder}}</div>
+                  <div class="year col-xs-6">{{month}} {{year}}</div>
                   {{#url}}
                   <div class="address col-xs-6 text-right">
                     <a href="{{url}}" target="_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
                   </div>
                   {{/url}}
                 </div>
-                <p>{{{summary}}}</p>
               </div>
-            </li>
-            {{/awards}}
-          </ul>
+            </div>
+            <div class="row">
+              <div class="job-details col-xs-11">
+                <div class="infos">
+                  {{{summary}}}
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/awards}}
         </div>
         {{/awardsBool}}
+
         {{#volunteerBool}}
         <!-- VOLUNTEER -->
         <div class="box">
@@ -266,6 +278,7 @@
           </ul>
         </div>
         {{/educationBool}}
+
         {{#publicationsBool}}
         <!-- PUBLICATIONS -->
         <div class="box">
@@ -293,6 +306,7 @@
           {{/publications}}
         </div>
         {{/publicationsBool}}
+
         {{#skillsBool}}
         <!-- SKILLS -->
         <div class="box">
@@ -309,6 +323,7 @@
           </ul>
         </div>
         {{/skillsBool}}
+
         {{#languagesBool}}
         <!-- LANGUAGES -->
         <div class="box">
@@ -323,6 +338,7 @@
           </ul>
         </div>
         {{/languagesBool}}
+
         {{#interestsBool}}
         <!-- HOBBIES -->
         <div class="box">
@@ -339,6 +355,7 @@
           </ul>
         </div>
         {{/interestsBool}}
+
         {{#referencesBool}}
         <!-- REFERENCES -->
         <div class="box">
