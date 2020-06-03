@@ -291,10 +291,18 @@ blockquote {
   border: 0.5px solid #234569;
   display: inline-block;
   margin-right: 5px;
-  margin-bottom: 5px;
   padding: 5px 10px;
   position: relative;
   font-size: 1em;
+}
+.list-group-item
+{
+  overflow: auto;
+}
+
+.list-group-item .item-name
+{
+  margin-right: 10px;
 }
 
 #language-skills .skill{
