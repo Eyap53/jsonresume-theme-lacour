@@ -167,7 +167,6 @@
             <ul id="awards" class="clearfix">
               {{#awards}}
               <li>
-                <div class="year pull-left">{{month}} {{year}}</div>
                 <div class="infos pull-right">
                   <h3>{{title}}</h3>
                   <div class="row">
@@ -292,8 +291,8 @@
             <h2><i class="fa fa-tasks ico"></i> Compétences</h2>
             <ul class="list-group">
             {{#skills}}
-            <li class=" list-group-item">
-                {{name}}
+            <li class="list-group-item">
+                <span class= "item-name">{{name}}</span>
                 {{#keywords}}
                 <span class= "interest badge pull-right">{{{.}}}</span>
                 {{/keywords}}
@@ -307,9 +306,12 @@
           <div class="box">
             <h2><i class="fa fa-language ico"></i> Langues</h2>
             <ul class="list-group">
-              {{#languages}}
-              <li class=" list-group-item">{{language}}<span class="skill badge pull-right">{{fluency}}</span></li>
-              {{/languages}}
+            {{#languages}}
+              <li class="list-group-item">
+                <span class= "item-name">{{language}}</span>
+                <span class= "skill badge pull-right">{{{fluency}}}</span>
+              </li>
+            {{/languages}}
             </ul>
           </div>
           {{/languagesBool}}
@@ -320,7 +322,7 @@
             <ul class="list-group">
             {{#interests}}
               <li class=" list-group-item">
-                {{name}}
+                <span class= "item-name">{{name}}</span>
                 {{#keywords}}
                 <span class= "interest badge pull-right">{{{.}}}</span>
                 {{/keywords}}
