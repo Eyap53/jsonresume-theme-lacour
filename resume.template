@@ -1,352 +1,361 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>C.V. de {{basics.name}}</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <style type="text/css">
-    {{{css}}}
-    </style>
-    <style type="text/css" media="print">
-    {{{printcss}}}
-    </style>
-  </head>
-  <body><br />
-    <div class="container">
-      <header id="header">
-      <!-- HEADER -->
-        <div class="row">
-          <div class="col-sm-3">
-            <div id="photo-header" class="text-center">
-              <!-- PHOTO (AVATAR) -->
-              {{#photo}}
-              <div id="photo">
-                <img src="{{photo}}" alt="avatar">
-              </div>
-              {{/photo}}
-            </div>
-          </div>
-          <div class="col-sm-5">
-              <div id="text-header">
-                <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
-              </div>
-          </div>
-          <div class="col-sm-4 contact">
-          <!-- CONTACT -->
-                {{#basics.url}}
-                <div class="contact-item">
-                  <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
-                  <div class="title only pull-right">Portfolio : <a href="{{basics.url}}" target="_blank">{{basics.beautifiedUrl}}</a></div>
-                </div>
-                {{/basics.url}}
-                {{#basics.location}}
-                <div class="contact-item">
-                  <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
-                  {{#basics.location.address}}<div class="title pull-right">{{basics.location.address}}</div>{{/basics.location.address}}
-                  <div class="title {{^basics.location.address}}only {{/basics.location.address}} pull-right">{{#basics.location.postalCode}}{{basics.location.postalCode}} {{/basics.location.postalCode}}{{basics.location.city}}{{#basics.location.region}}, {{basics.location.region}}{{/basics.location.region}}{{#basics.location.countryCode}} {{basics.location.countryCode}}{{/basics.location.countryCode}}</div>
-                </div>
-                {{/basics.location}}
-                {{#basics.phone}}
-                <div class="contact-item">
-                  <div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
-                  <div class="title only pull-right">{{basics.phone}}</div>
-                </div>
-                {{/basics.phone}}
-                {{#basics.email}}
-                <div class="contact-item">
-                  <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
-                  <div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
-                </div>
-                {{/basics.email}}
-                {{#profilesBool}}
-                {{#basics.profiles}}
-                  <div class="contact-item">
-                    <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
-                    <div class="title only pull-right">{{network}} - <a href="{{url}}" target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{beautifiedUrl}}{{/username}}</a></div>
-                  </div>
-                  {{/basics.profiles}}
-                {{/profilesBool}}
-          </div>
-        </div>
-      </header>
-      <div class="row">
-        <div class="col-xs-12 col-sm-7">
-          {{#basics.summary}}
-          <!-- ABOUT ME -->
-          <div class="box">
-            <h2></h2>
-            <p id="about">"{{{basics.summary}}}"</p>
-          </div>
-          {{/basics.summary}}
-          {{#workBool}}
-          <!-- WORK EXPERIENCE -->
-          <div class="box">
-            <h2><i class= "fa fa-suitcase ico"></i> Work Experience</h2>
-            {{#work}}
-              <div class="job clearfix row">
-                  <div class="details">
-                    <span class="name">{{name}}</span> - <span class="profession">{{position}}</span>
-                    <div class="row">
-                      <div class="year col-xs-6">{{period}}</div>
-                      {{#url}}
-                        <div class="address col-xs-6 text-right">
-                          <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
-                        </div>
-                      {{/url}}
-                    </div>
-                  </div>
-                  <div class="job-details col-xs-11">
-                    <div class="infos">
-                      {{{summary}}}
-                      {{#boolHighlights}}
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        {{#highlights}}
-                        <li class="list-group-item">{{{.}}}</li>
-                        {{/highlights}}
-                      </ul>
-                      {{/boolHighlights}}
-                    </div>
-                    <div class="description">{{name}} : {{description}} {{#location}}({{location}}){{/location}}</div>
-                  </div>
-              </div>
-            {{/work}}
-          </div>
-          {{/workBool}}
-		  {{#projectsBool}}
-          <!-- PROJECTS EXPERIENCE -->
-          <div class="box">
-            <h2><i class= "fa fa-code ico"></i> Projects experience</h2>
-            {{#projects}}
-              <div class="job clearfix">
-                <div class="row">
-                    <div class="details">
-                        <span class="name">{{name}}</span> - <span class="profession">{{position}}</span>
-                        <div class="row">
-                          <div class="year col-xs-6">{{period}}</div>
-                          {{#url}}
-                            <div class="address col-xs-6 text-right">
-                              <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
-                            </div>
-                          {{/url}}
-                        </div>
-                      </div>
-                </div>
-                <div class="row">
-                  <div class="job-details col-xs-11">
-                    <div class="infos">
-                      {{{description}}}
-					 <div class="col-sm-offset-1 col-sm-12 clearfix badges">
-						{{#keywords}}
-							<span class= "interest badge">{{{.}}}</span>
-						{{/keywords}}
-					</div>
-                      {{#boolHighlights}}
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        {{#highlights}}
-                        <li class="list-group-item">{{{.}}}</li>
-                        {{/highlights}}
-                      </ul>
-                      {{/boolHighlights}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {{/projects}}
-          </div>
-          {{/projectsBool}}
-          {{#awardsBool}}
-          <!-- AWARDS -->
-          <div class="box">
-            <h2><i class="fa fa-trophy ico"></i> Awards</h2>
-            <ul id="awards" class="clearfix">
-              {{#awards}}
-              <li>
-                <div class="infos pull-right">
-                  <h3>{{title}}</h3>
-                  <div class="row">
-                  <div class="col-xs-6"><i class="fa fa-certificate ico"></i> {{awarder}}</div>
-                  {{#url}}
-                    <div class="address col-xs-6 text-right">
-                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
-                    </div>
-                  {{/url}}
-                  </div>
-                  <p>{{{summary}}}</p>
-                </div>
-              </li>
-              {{/awards}}
-            </ul>
-          </div>
-          {{/awardsBool}}
-          {{#volunteerBool}}
-          <!-- VOLUNTEER -->
-          <div class="box">
-            <h2><i class= "fa fa-group ico"></i> Volunteer</h2>
-            {{#volunteer}}
-              <div class="job clearfix">
-                <div class="row">
-                  <div class="details">
-                    <div class="where">{{organization}}</div>
-                    {{#url}}
-                    <div class="address">
-                      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
-                    </div>
-                    {{/url}}
-                    <div class="year">{{period}}</div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-11 pull-right">
-                    <div class="profession">{{position}}</div>
-                    <div class="infos">
-                      {{{summary}}}
-                      {{#boolHighlights}}
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        {{#highlights}}
-                        <li class="list-group-item">{{{.}}}</li>
-                        {{/highlights}}
-                      </ul>
-                      {{/boolHighlights}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {{/volunteer}}
-          </div>
-          {{/volunteerBool}}
-        </div>
 
-        <div class="col-xs-12 col-sm-5">
-          {{#educationBool}}
-          <!-- EDUCATION -->
-          <div class="box">
-            <h2><i class="fa fa-university ico"></i> Education</h2>
-            <ul id="education" class="clearfix">
-              {{#education}}
-              <li>
-                <div class="year pull-left">
-          				{{endDateYear}}<br>
-          				{{startDateYear}}
-        				</div>
-                <div class="infos pull-right">
-                  <h3>{{institution}}</h3>
-                  {{#studyType}}<p><i class= "fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
-                  <p>{{area}}</p>
-                  {{#gpa}}
-                  <p>
-                    GPA: {{gpa}}
-                  </p>
-                  {{/gpa}}
-                  {{#educationCourses}}
-                    <div>Courses :</div>
-                    <ul class="list-group">
-                      {{#courses}}
-                      <li class="list-group-item">{{{.}}}</li>
-                      {{/courses}}
-                    </ul>
-                  {{/educationCourses}}
-                </div>
-              </li>
-              {{/education}}
-            </ul>
-          </div>
-          {{/educationBool}}
-          {{#publicationsBool}}
-          <!-- PUBLICATIONS -->
-          <div class="box">
-            <h2><i class="fa fa-book ico"></i> Publications</h2>
-            {{#publications}}
-            <div class="publication panel panel-default">
-              <div class="panel-heading">
-                <div class="name panel-title">{{name}}</div>
-              </div>
-              <div class="panel-body">
-                {{#publisher}}
-                <div class="publisher"><i class= "fa fa-bookmark ico"></i> {{publisher}}</div>
-                {{/publisher}}
-                <div class="year">{{day}} {{month}} {{year}}</div>
-                {{#url}}
-                <div class="address">
-                  <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
-                </div>
-                {{/url}}
-                {{#summary}}
-                <p>{{{summary}}}</p>
-                {{/summary}}
-              </div>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C.V. de {{basics.name}}</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    {{{css}}}
+  </style>
+  </head>
+
+<body>
+  <div class="container">
+    <header id="header">
+      <!-- HEADER -->
+      <div class="row">
+        <div class="col-sm-3">
+          <div id="photo-header" class="text-center">
+            <!-- PHOTO (AVATAR) -->
+            {{#photo}}
+            <div id="photo">
+              <img src="{{photo}}" alt="avatar">
             </div>
-            {{/publications}}
+            {{/photo}}
           </div>
-          {{/publicationsBool}}
-          {{#skillsBool}}
-          <!-- SKILLS -->
-          <div class="box">
-            <h2><i class="fa fa-tasks ico"></i> Skills</h2>
-            <ul class="list-group">
-            {{#skills}}
-            <li class="list-group-item">
-                <span class= "item-name">{{name}}</span>
-                {{#keywords}}
-                <span class= "interest badge pull-right">{{{.}}}</span>
-                {{/keywords}}
-              </li>
-            {{/skills}}
-            </ul>
+        </div>
+        <div class="col-sm-5">
+          <div id="text-header">
+            <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
           </div>
-          {{/skillsBool}}
-          {{#languagesBool}}
-          <!-- LANGUAGES -->
-          <div class="box">
-            <h2><i class="fa fa-language ico"></i> Languages</h2>
-            <ul class="list-group">
-            {{#languages}}
-              <li class="list-group-item">
-                <span class= "item-name">{{language}}</span>
-                <span class= "skill badge pull-right">{{{fluency}}}</span>
-              </li>
-            {{/languages}}
-            </ul>
+        </div>
+        <div class="col-sm-4 contact">
+          <!-- CONTACT -->
+          {{#basics.url}}
+          <div class="contact-item">
+            <div class="icon pull-left text-center"><span class="fa fa-globe fa-fw"></span></div>
+            <div class="title only pull-right">Portfolio : <a href="{{basics.url}}"
+                target="_blank">{{basics.beautifiedUrl}}</a></div>
           </div>
-          {{/languagesBool}}
-          {{#interestsBool}}
-          <!-- HOBBIES -->
-          <div class="box">
-            <h2><i class="fa fa-heart ico"></i> Interests</h2>
-            <ul class="list-group">
-            {{#interests}}
-              <li class=" list-group-item">
-                <span class= "item-name">{{name}}</span>
-                {{#keywords}}
-                <span class= "interest badge pull-right">{{{.}}}</span>
-                {{/keywords}}
-              </li>
-            {{/interests}}
-            </ul>
+          {{/basics.url}}
+          {{#basics.location}}
+          <div class="contact-item">
+            <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
+            {{#basics.location.address}}<div class="title pull-right">{{basics.location.address}}</div>
+            {{/basics.location.address}}
+            <div class="title {{^basics.location.address}}only {{/basics.location.address}} pull-right">
+              {{#basics.location.postalCode}}{{basics.location.postalCode}}
+              {{/basics.location.postalCode}}{{basics.location.city}}{{#basics.location.region}},
+              {{basics.location.region}}{{/basics.location.region}}{{#basics.location.countryCode}}
+              {{basics.location.countryCode}}{{/basics.location.countryCode}}</div>
           </div>
-          {{/interestsBool}}
-          {{#referencesBool}}
-          <!-- REFERENCES -->
-          <div class="box">
-            <h2><i class= "fa fa-check-square ico"></i> References</h2>
-            {{#references}}
-            <blockquote>
-              <div>{{{reference}}}</div>
-              <footer>
-                <a href="{{url}}" target= "_blank">{{name}}</a>
-              </footer>
-            </blockquote><br>
-            {{/references}}
+          {{/basics.location}}
+          {{#basics.phone}}
+          <div class="contact-item">
+            <div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
+            <div class="title only pull-right">{{basics.phone}}</div>
           </div>
-          {{/referencesBool}}
+          {{/basics.phone}}
+          {{#basics.email}}
+          <div class="contact-item">
+            <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
+            <div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a>
+            </div>
+          </div>
+          {{/basics.email}}
+          {{#profilesBool}}
+          {{#basics.profiles}}
+          <div class="contact-item">
+            <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
+            <div class="title only pull-right">{{network}} - <a href="{{url}}"
+                target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{beautifiedUrl}}{{/username}}</a>
+            </div>
+          </div>
+          {{/basics.profiles}}
+          {{/profilesBool}}
         </div>
       </div>
+    </header>
+    <div class="row">
+      <div class="col-xs-12 col-sm-7">
+        {{#basics.summary}}
+        <!-- ABOUT ME -->
+        <div class="box">
+          <h2></h2>
+          <p id="about">"{{{basics.summary}}}"</p>
+        </div>
+        {{/basics.summary}}
+        {{#workBool}}
+        <!-- WORK EXPERIENCE -->
+        <div class="box">
+          <h2><i class="fa fa-suitcase ico"></i> Work Experience</h2>
+          {{#work}}
+          <div class="job clearfix row">
+            <div class="details">
+              <span class="name">{{name}}</span> - <span class="profession">{{position}}</span>
+              <div class="row">
+                <div class="year col-xs-6">{{period}}</div>
+                {{#url}}
+                <div class="address col-xs-6 text-right">
+                  <a href="{{url}}" target="_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
+                </div>
+                {{/url}}
+              </div>
+            </div>
+            <div class="job-details col-xs-11">
+              <div class="infos">
+                {{{summary}}}
+                {{#boolHighlights}}
+                <div class="highlights">Highlights</div>
+                <ul class="list-group">
+                  {{#highlights}}
+                  <li class="list-group-item">{{{.}}}</li>
+                  {{/highlights}}
+                </ul>
+                {{/boolHighlights}}
+              </div>
+              <div class="description">{{name}} : {{description}} {{#location}}({{location}}){{/location}}</div>
+            </div>
+          </div>
+          {{/work}}
+        </div>
+        {{/workBool}}
+        {{#projectsBool}}
+        <!-- PROJECTS EXPERIENCE -->
+        <div class="box">
+          <h2><i class="fa fa-code ico"></i> Projects experience</h2>
+          {{#projects}}
+          <div class="job clearfix">
+            <div class="row">
+              <div class="details">
+                <span class="name">{{name}}</span> - <span class="profession">{{position}}</span>
+                <div class="row">
+                  <div class="year col-xs-6">{{period}}</div>
+                  {{#url}}
+                  <div class="address col-xs-6 text-right">
+                    <a href="{{url}}" target="_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
+                  </div>
+                  {{/url}}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="job-details col-xs-11">
+                <div class="infos">
+                  {{{description}}}
+                  <div class="col-sm-offset-1 col-sm-12 clearfix badges">
+                    {{#keywords}}
+                    <span class="interest badge">{{{.}}}</span>
+                    {{/keywords}}
+                  </div>
+                  {{#boolHighlights}}
+                  <div class="highlights">Highlights</div>
+                  <ul class="list-group">
+                    {{#highlights}}
+                    <li class="list-group-item">{{{.}}}</li>
+                    {{/highlights}}
+                  </ul>
+                  {{/boolHighlights}}
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/projects}}
+        </div>
+        {{/projectsBool}}
+        {{#awardsBool}}
+        <!-- AWARDS -->
+        <div class="box">
+          <h2><i class="fa fa-trophy ico"></i> Awards</h2>
+          <ul id="awards" class="clearfix">
+            {{#awards}}
+            <li>
+              <div class="infos pull-right">
+                <h3>{{title}}</h3>
+                <div class="row">
+                  <div class="col-xs-6"><i class="fa fa-certificate ico"></i> {{awarder}}</div>
+                  {{#url}}
+                  <div class="address col-xs-6 text-right">
+                    <a href="{{url}}" target="_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
+                  </div>
+                  {{/url}}
+                </div>
+                <p>{{{summary}}}</p>
+              </div>
+            </li>
+            {{/awards}}
+          </ul>
+        </div>
+        {{/awardsBool}}
+        {{#volunteerBool}}
+        <!-- VOLUNTEER -->
+        <div class="box">
+          <h2><i class="fa fa-group ico"></i> Volunteer</h2>
+          {{#volunteer}}
+          <div class="job clearfix">
+            <div class="row">
+              <div class="details">
+                <div class="where">{{organization}}</div>
+                {{#url}}
+                <div class="address">
+                  <a href="{{url}}" target="_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
+                </div>
+                {{/url}}
+                <div class="year">{{period}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-11 pull-right">
+                <div class="profession">{{position}}</div>
+                <div class="infos">
+                  {{{summary}}}
+                  {{#boolHighlights}}
+                  <div class="highlights">Highlights</div>
+                  <ul class="list-group">
+                    {{#highlights}}
+                    <li class="list-group-item">{{{.}}}</li>
+                    {{/highlights}}
+                  </ul>
+                  {{/boolHighlights}}
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/volunteer}}
+        </div>
+        {{/volunteerBool}}
+      </div>
+
+      <div class="col-xs-12 col-sm-5">
+        {{#educationBool}}
+        <!-- EDUCATION -->
+        <div class="box">
+          <h2><i class="fa fa-university ico"></i> Education</h2>
+          <ul id="education" class="clearfix">
+            {{#education}}
+            <li>
+              <div class="year pull-left">
+                {{endDateYear}}<br>
+                {{startDateYear}}
+              </div>
+              <div class="infos pull-right">
+                <h3>{{institution}}</h3>
+                {{#studyType}}<p><i class="fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
+                <p>{{area}}</p>
+                {{#gpa}}
+                <p>
+                  GPA: {{gpa}}
+                </p>
+                {{/gpa}}
+                {{#educationCourses}}
+                <div>Courses :</div>
+                <ul class="list-group">
+                  {{#courses}}
+                  <li class="list-group-item">{{{.}}}</li>
+                  {{/courses}}
+                </ul>
+                {{/educationCourses}}
+              </div>
+            </li>
+            {{/education}}
+          </ul>
+        </div>
+        {{/educationBool}}
+        {{#publicationsBool}}
+        <!-- PUBLICATIONS -->
+        <div class="box">
+          <h2><i class="fa fa-book ico"></i> Publications</h2>
+          {{#publications}}
+          <div class="publication panel panel-default">
+            <div class="panel-heading">
+              <div class="name panel-title">{{name}}</div>
+            </div>
+            <div class="panel-body">
+              {{#publisher}}
+              <div class="publisher"><i class="fa fa-bookmark ico"></i> {{publisher}}</div>
+              {{/publisher}}
+              <div class="year">{{day}} {{month}} {{year}}</div>
+              {{#url}}
+              <div class="address">
+                <a href="{{url}}" target="_blank"><i class="fa fa-globe ico"></i> {{beautifiedUrl}}</a>
+              </div>
+              {{/url}}
+              {{#summary}}
+              <p>{{{summary}}}</p>
+              {{/summary}}
+            </div>
+          </div>
+          {{/publications}}
+        </div>
+        {{/publicationsBool}}
+        {{#skillsBool}}
+        <!-- SKILLS -->
+        <div class="box">
+          <h2><i class="fa fa-tasks ico"></i> Skills</h2>
+          <ul class="list-group">
+            {{#skills}}
+            <li class="list-group-item">
+              <span class="item-name">{{name}}</span>
+              {{#keywords}}
+              <span class="interest badge pull-right">{{{.}}}</span>
+              {{/keywords}}
+            </li>
+            {{/skills}}
+          </ul>
+        </div>
+        {{/skillsBool}}
+        {{#languagesBool}}
+        <!-- LANGUAGES -->
+        <div class="box">
+          <h2><i class="fa fa-language ico"></i> Languages</h2>
+          <ul class="list-group">
+            {{#languages}}
+            <li class="list-group-item">
+              <span class="item-name">{{language}}</span>
+              <span class="skill badge pull-right">{{{fluency}}}</span>
+            </li>
+            {{/languages}}
+          </ul>
+        </div>
+        {{/languagesBool}}
+        {{#interestsBool}}
+        <!-- HOBBIES -->
+        <div class="box">
+          <h2><i class="fa fa-heart ico"></i> Interests</h2>
+          <ul class="list-group">
+            {{#interests}}
+            <li class=" list-group-item">
+              <span class="item-name">{{name}}</span>
+              {{#keywords}}
+              <span class="interest badge pull-right">{{{.}}}</span>
+              {{/keywords}}
+            </li>
+            {{/interests}}
+          </ul>
+        </div>
+        {{/interestsBool}}
+        {{#referencesBool}}
+        <!-- REFERENCES -->
+        <div class="box">
+          <h2><i class="fa fa-check-square ico"></i> References</h2>
+          {{#references}}
+          <blockquote>
+            <div>{{{reference}}}</div>
+            <footer>
+              <a href="{{url}}" target="_blank">{{name}}</a>
+            </footer>
+          </blockquote><br>
+          {{/references}}
+        </div>
+        {{/referencesBool}}
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
