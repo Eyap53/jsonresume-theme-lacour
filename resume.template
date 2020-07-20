@@ -31,7 +31,7 @@
         </div>
         <div class="col-sm-5">
           <div id="text-header">
-            <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
+            <h1>{{basics.name}}<br />{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
           </div>
         </div>
         <div class="col-sm-4 contact">
@@ -87,7 +87,7 @@
         <!-- ABOUT ME -->
         <div class="box">
           <h2></h2>
-          <p id="about">"{{{basics.summary}}}"</p>
+          <p id="about">{{{basics.summary}}}</p>
         </div>
         {{/basics.summary}}
 
@@ -180,8 +180,7 @@
           <div class="job clearfix">
             <div class="row">
               <div class="details">
-                <span class="name">{{awarder}}</span> - <span class="profession"><i class="fa fa-certificate ico"></i>
-                  {{title}}</span>
+                <span class="name">{{awarder}}</span> - <span class="profession">{{title}}</span>
                 <div class="row">
                   <div class="year col-xs-6">{{month}} {{year}}</div>
                   {{#url}}
@@ -252,7 +251,7 @@
             {{#education}}
             <li>
               <div class="year pull-left">
-                {{endDateYear}}<br>
+                {{endDateYear}}<br />
                 {{startDateYear}}
               </div>
               <div class="infos pull-right">
@@ -366,7 +365,7 @@
             <footer>
               <a href="{{url}}" target="_blank">{{name}}</a>
             </footer>
-          </blockquote><br>
+          </blockquote><br />
           {{/references}}
         </div>
         {{/referencesBool}}
