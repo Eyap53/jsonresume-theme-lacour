@@ -120,7 +120,7 @@
                 </ul>
                 {{/boolHighlights}}
               </div>
-              <div class="description">{{name}} : {{description}} {{#location}}({{location}}){{/location}}</div>
+              <div class="description">{{#description}}{{name}} : {{description}} {{/description}}{{#location}}({{location}}){{/location}}</div>
             </div>
           </div>
           {{/work}}
