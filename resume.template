@@ -264,7 +264,7 @@
                 </p>
                 {{/gpa}}
                 {{#educationCourses}}
-                <div>Courses :</div>
+                <div>Matières :</div>
                 <ul class="list-group">
                   {{#courses}}
                   <li class="list-group-item">{{{.}}}</li>
