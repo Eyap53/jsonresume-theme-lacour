@@ -29,9 +29,12 @@
             {{/photo}}
           </div>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-5 resume_name">
           <div id="text-header">
-            <h1>{{basics.name}}<br />{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
+            <h1>{{basics.name}}</h1>
+            {{#basics.label}}
+              <h2>{{basics.label}}</h2>
+            {{/basics.label}}
           </div>
         </div>
         <div class="col-sm-4 contact">
