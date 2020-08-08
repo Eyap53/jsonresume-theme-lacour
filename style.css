@@ -254,8 +254,7 @@ blockquote {
   background: #eee;
 }
 .contact-item .title{
-  width: 80%;
-  width: calc(100% - 55px);
+  width: 84%;
   font-weight: 700;
   font-size: 1.4em;
   line-height: 100%;
