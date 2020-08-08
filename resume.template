@@ -259,7 +259,7 @@
               </div>
               <div class="infos pull-right">
                 <h3>{{institution}}</h3>
-                {{#studyType}}<p><i class="fa fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
+                {{#studyType}}<p><i class="fa fa-graduation-cap ico"></i> {{.}}</p>{{/studyType}}
                 <p>{{area}}</p>
                 {{#gpa}}
                 <p>
@@ -267,7 +267,7 @@
                 </p>
                 {{/gpa}}
                 {{#educationCourses}}
-                <div>Matières :</div>
+                <div>Compétences :</div>
                 <ul class="list-group">
                   {{#courses}}
                   <li class="list-group-item">{{{.}}}</li>
