@@ -9,9 +9,9 @@ You can use [resume-cli](https://github.com/jsonresume/resume-cli) OR [HackMyRes
 
 ### Exemple with HackMyResume :
  * Get HackMyResume : [sudo] npm install hackmyresume -g
- * Download the theme : git clone https://github.com/Eyap53/jsonresume-theme-bluewhale-fr.git
+ * Download the theme : git clone https://github.com/Eyap53/jsonresume-theme-lacour.git
  * Install dependencies : npm install
- * Render your resume with something like : hackmyresume BUILD resume_fr.json TO out/resume.html -t jsonresume-theme-bluewhale-fr
+ * Render your resume with something like : hackmyresume BUILD resume_fr.json TO resume.html -t jsonresume-theme-lacour
 
  * With wkhtmltopdf, convert it to pdf with : wkhtmltopdf -B 0 -L 0 -R 0 -T 0 -d 300 --viewport-size 1980 resume.html resume.pdf
 
