@@ -72,20 +72,21 @@ blockquote {
   width: 100%;
   height: 3px;
   border-bottom: 1px solid #ddd;
-  margin-top: 15px;
+  margin-top: 8px;
   content: '';
   display: block;
 }
 
 .box{
-  padding-bottom: 5px;
-  margin-bottom: 5px;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 .box h2{
   color: #227c74;
   font-size: 1.2em;
   font-weight: 700;
+  margin-top: 8px;
   text-transform: uppercase;
 }
 
