@@ -7,13 +7,20 @@ Initially based on [LinuxBozo](https://github.com/LinuxBozo)'s theme but modifie
 
 You can use [resume-cli](https://github.com/jsonresume/resume-cli) OR [HackMyResume](https://github.com/hacksalot/HackMyResume) to obtain your resume.
 
-### Exemple with HackMyResume :
- * Get HackMyResume : [sudo] npm install hackmyresume -g
- * Download the theme : git clone https://github.com/Eyap53/jsonresume-theme-bluewhale-fr.git
- * Install dependencies : npm install
- * Render your resume with something like : hackmyresume BUILD resume_fr.json TO out/resume.html -t jsonresume-theme-bluewhale-fr
+### Exemple with HackMyResume - FR :
+ * Telecharger HackMyResume : (Linux: [sudo] npm install hackmyresume -g)
+ * Telecharger git
+ * Telecharger un outil de transfert de html vers pdf. J'utilise wkhtmltopdf içi.
+ * Installer le theme : 
+    * Ouvrir une invite de commande. Lancer une recherche windows et taper cmd. Vous pouvez également utiliser "ouvrir bash"
+    * Lancer la commande au bon endroit : git clone --branch=fr_delot https://github.com/Eyap53/jsonresume-theme-lacour.git
+ * Install les dépendances du thème : npm install
+ * Obtenir votre CV en html : hackmyresume BUILD resume_fr.json TO out/resume.html -t jsonresume-theme-bluewhale-fr
 
- * With wkhtmltopdf, convert it to pdf with : wkhtmltopdf -B 0 -L 0 -R 0 -T 0 -d 300 --viewport-size 1980 resume.html resume.pdf
+ * A cette étape vérifier que tout vas bien avec le CV en HTML. Puis il faut le passer en pdf (standard dans l'industrie)
+
+ * Avec wkhtmltopdf, lancer la commande : wkhtmltopdf -B 0 -L 0 -R 0 -T 0 -d 300 --viewport-size 1980 resume.html resume.pdf
+    Bien sûr, il faut adapter les nom - resume.html pour l'entrée,, resume.pdf pour le nom de sortie.
 
 ## Tips
 
