@@ -5,22 +5,37 @@ Initially based on [LinuxBozo](https://github.com/LinuxBozo)'s theme but modifie
 
 ## Usage
 
-You can use [resume-cli](https://github.com/jsonresume/resume-cli) OR [HackMyResume](https://github.com/hacksalot/HackMyResume) to obtain your resume.
+You can use [resume-cli](https://github.com/jsonresume/resume-cli) OR [HackMyResume](https://github.com/hacksalot/HackMyResume) (*deprecated*) to obtain your resume.
 
-### Exemple with HackMyResume - FR :
- * Telecharger HackMyResume : (Linux: [sudo] npm install hackmyresume -g)
- * Telecharger git
+### Installation des outils
+ * Telecharger resume-cli : 
+    - Pour cela, il faut tout d'abord telecharger npm avec nodejs ()
+    - puis lancer la commande dans le terminal 'npm install -g resume-cli'.
+ * Telecharger git.
  * Telecharger un outil de transfert de html vers pdf. J'utilise wkhtmltopdf içi.
  * Installer le theme : 
-    * Ouvrir une invite de commande. Lancer une recherche windows et taper cmd. Vous pouvez également utiliser "ouvrir bash"
-    * Lancer la commande au bon endroit : git clone --branch=fr_delot https://github.com/Eyap53/jsonresume-theme-lacour.git
- * Install les dépendances du thème : npm install
- * Obtenir votre CV en html : hackmyresume BUILD resume_fr.json TO out/resume.html -t jsonresume-theme-bluewhale-fr
+    - Ouvrir une invite de commande tel que powershell.
+    - Se deplacer dans le bon repertoire avec la commande cd *nom_du_dossier_relatif*.
+    - Lancer la commande : git clone --branch=fr_delot https://github.com/Eyap53/jsonresume-theme-lacour.git
+    - Lancer cette commande ci permet de se placer directement sur la bonne branche, afin d'éviter un git checkout.
+ * Install les dépendances du thème : 
+    - Toujours avec git bash, se deplacer dans le bon dossier : 'cd jsonresume-theme-lacour'
+    - Lancer l'installation des package : 'npm install'
 
- * A cette étape vérifier que tout vas bien avec le CV en HTML. Puis il faut le passer en pdf (standard dans l'industrie)
+### Otention du CV :
+ * Vérifier que le CV fonctionne comme il faut :
+    - Bien vérifier que son nom soit resume.json
+    - Lancer la commande dans le terminal : 'resume validate'
+    - Si rien ne se passe, c'est que c'est OK.
+ * Obtenir votre CV en html : 
+    - Toujours être au bon endroit
+    - Lancer : 'resume export resume.html --theme jsonresume-theme-bluewhale-fr'
 
- * Avec wkhtmltopdf, lancer la commande : wkhtmltopdf -B 0 -L 0 -R 0 -T 0 -d 300 --viewport-size 1980 resume.html resume.pdf
-    Bien sûr, il faut adapter les nom - resume.html pour l'entrée,, resume.pdf pour le nom de sortie.
+ * A cette étape vérifier que tout vas bien avec le CV en HTML. Puis il faut le passer en pdf (un standard en entreprise !):
+    - Etre toujours au bon endroit (idem qe les deux points précédents normalement).
+    - Lancer la commande : 'wkhtmltopdf.exe -B 0 -L 0 -R 0 -T 0 -d 300 --viewport-size 1980 resume.html resume.pdf'
+
+Vous devriez avoir obtenu votre CV !
 
 ## Tips
 
