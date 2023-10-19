@@ -1,6 +1,6 @@
 # Custom JSONResume theme
 
-A theme for JSONResume, __in French__, that relies on Bootstrap and FontAwesome.
+A theme for JSONResume that relies on Bootstrap and FontAwesome.
 Initially based on [LinuxBozo](https://github.com/LinuxBozo)'s theme but modified to better fit my needs, particularly in the header and sections displays.
 
 ## Usage
