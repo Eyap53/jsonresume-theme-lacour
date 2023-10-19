@@ -89,7 +89,6 @@
         {{#basics.summary}}
         <!-- ABOUT ME -->
         <div class="box">
-          <h2></h2>
           <p id="about">{{{basics.summary}}}</p>
         </div>
         {{/basics.summary}}

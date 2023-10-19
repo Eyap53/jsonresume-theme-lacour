@@ -78,7 +78,7 @@ blockquote {
 }
 
 .box{
-  padding-bottom: 5px;
+  padding-bottom: 3px;
   margin-bottom: 5px;
 }
 
@@ -93,6 +93,7 @@ blockquote {
   text-align: justify;
   font-style: italic;
   font-size: 1.35em;
+  margin-top: 10px;
 }
 
 #education{
